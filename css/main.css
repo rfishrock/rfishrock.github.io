@@ -1061,10 +1061,7 @@ pre .javascript .function {
   transition-delay: 0s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  width: 24px;
-}
-.back-to-top span {
-  display: none;
+  width: initial;
 }
 .back-to-top:hover {
   color: #87daff;
@@ -1112,7 +1109,7 @@ pre .javascript .function {
   border-bottom: none;
   color: #fff;
   display: inline-block;
-  line-height: 1.375em;
+  line-height: 24em;
   padding: 0 40px;
   position: relative;
 }
@@ -1128,7 +1125,7 @@ pre .javascript .function {
 .site-title {
   display: inline-block;
   font-family: 'Lobster Two', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1.375em;
+  font-size: 24em;
   font-weight: normal;
   line-height: 1.5;
   vertical-align: top;
@@ -1758,7 +1755,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #6e2958;
+  background: #73ffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
