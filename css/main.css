@@ -1086,7 +1086,7 @@ pre .javascript .function {
   z-index: 9999;
 }
 .header {
-  background: url("../image/background.png");
+  background: url("../images/background.png");
 }
 .header-inner {
   position: relative;
@@ -1779,7 +1779,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a82f60;
+  background: #6975e4;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
