@@ -55,17 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="信息是消除系统不确定性的唯一方式">
-<meta property="og:type" content="website">
-<meta property="og:title" content="RFiSH">
-<meta property="og:url" content="http://yoursite.com/archives/2016/10/index.html">
+  <meta name="description" content="在Blog中将原先使用外链引入的图片改为本地引入图片。">
+<meta name="keywords" content="Blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo引入本地相对路径图片">
+<meta property="og:url" content="http://yoursite.com/2019/10/02/Hexo引入本地相对路径图片/index.html">
 <meta property="og:site_name" content="RFiSH">
-<meta property="og:description" content="信息是消除系统不确定性的唯一方式">
+<meta property="og:description" content="在Blog中将原先使用外链引入的图片改为本地引入图片。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-02T08:57:40.891Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RFiSH">
-<meta name="twitter:description" content="信息是消除系统不确定性的唯一方式">
-  <link rel="canonical" href="http://yoursite.com/archives/2016/10/">
+<meta name="twitter:title" content="Hexo引入本地相对路径图片">
+<meta name="twitter:description" content="在Blog中将原先使用外链引入的图片改为本地引入图片。">
+  <link rel="canonical" href="http://yoursite.com/2019/10/02/Hexo引入本地相对路径图片/">
 
 
 <script id="page-configurations">
@@ -73,13 +75,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | RFiSH</title>
+  <title>Hexo引入本地相对路径图片 | RFiSH</title>
   
 
 
@@ -219,24 +221,6 @@
 
     
 
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-  
-
 </nav>
   <div class="site-search">
     <div class="popup search-popup">
@@ -277,95 +261,137 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        
-        
-        
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/02/Hexo引入本地相对路径图片/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RFishRock">
+      <meta itemprop="description" content="信息是消除系统不确定性的唯一方式">
+      <meta itemprop="image" content="/images/myAvatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RFiSH">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Hexo引入本地相对路径图片
+
           
-        
-        <span class="collection-header">嗯..! 目前共计 4 篇日志。 继续努力。</span>
-      </div>
-      
+        </h1>
 
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-  
-  
+              
+                
+              
 
-  
+              <time title="创建时间：2019-10-02 00:00:00 / 修改时间：16:57:40" itemprop="dateCreated datePublished" datetime="2019-10-02T00:00:00+08:00">2019-10-02</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Blog/" itemprop="url" rel="index"><span itemprop="name">Blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2016</h1>
-    </div>
-  
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <p>在Blog中将原先使用外链引入的图片改为本地引入图片。</p>
+<a id="more"></a>
 
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2016/10/16/登录网页编写/" itemprop="url">
-            <span itemprop="name">仿淘宝登录网页编写</span>
-          </a>
-        
-      </h2>
+<p>将Hexo站点配置文件_config.yml中post_asset_folder属性改为true。</p>
+<p>这时假使我们创建新post，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post_name</span><br></pre></td></tr></table></figure>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-16T00:00:00+08:00"
-              content="2016-10-16">
-          10-16
-        </time>
-      </div>
+<p>我们将在_post文件夹下获得post_name.md文件以及post_name文件夹。post_name文件夹用于存储引入的图片。同时在post_name.md中引入图片：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset<span class="emphasis">_img img_</span>name img_alt %&#125;</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </article>
+<h2 id="为什么不使用-方法"><a href="#为什么不使用-方法" class="headerlink" title="为什么不使用![]方法"></a>为什么不使用![]方法</h2><p>Hexo本身使用![]方法插入图片是没有问题的，</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">img_alt</span>](<span class="link">img_name</span>)</span><br></pre></td></tr></table></figure>
 
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2016/10/03/静态博客搭建/" itemprop="url">
-            <span itemprop="name">静态博客搭建</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-10-03T00:00:00+08:00"
-              content="2016-10-03">
-          10-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+<p>在post下也可正常显示。然而在next主题中，如加入read more功能时，主页中图片的路径会因为使用相对路径而无法正常显示。因此此时选择使用hexo3新方法：{}。</p>
 
     </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Blog/" rel="tag"># Blog</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2016/10/16/登录网页编写/" rel="next" title="仿淘宝登录网页编写">
+                  <i class="fa fa-chevron-left"></i> 仿淘宝登录网页编写
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/02/Ubuntu系统安装/" rel="prev" title="Ubuntu系统安装">
+                  Ubuntu系统安装 <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-
+  </div>
 
 
           </div>
@@ -384,6 +410,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -396,6 +427,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么不使用-方法"><span class="nav-number">1.</span> <span class="nav-text">为什么不使用![]方法</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
