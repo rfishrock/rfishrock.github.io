@@ -14,7 +14,7 @@
   <entry>
     <title><![CDATA[Hexo引入本地相对路径图片]]></title>
     <url>%2F2019%2F10%2F02%2FHexo%E5%BC%95%E5%85%A5%E6%9C%AC%E5%9C%B0%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%9B%BE%E7%89%87%2F</url>
-    <content type="text"><![CDATA[在Blog中将原先使用外链引入的图片改为本地引入图片。 将Hexo站点配置文件_config.yml中post_asset_folder属性改为true。 这时假使我们创建新post， 1hexo new post_name 我们将在_post文件夹下获得post_name.md文件以及post_name文件夹。post_name文件夹用于存储引入的图片。同时在post_name.md中引入图片： 1&#123;% asset_img img_name img_alt %&#125; 为什么不使用![]方法Hexo本身使用![]方法插入图片是没有问题的， 1![img_alt](img_name) 在post下也可正常显示。然而在next主题中，如加入read more功能时，主页中图片的路径会因为使用相对路径而无法正常显示。因此此时选择使用hexo3新方法：{}。]]></content>
+    <content type="text"><![CDATA[在Blog中将原先使用外链引入的图片改为本地引入图片。 相对路径引用将Hexo站点配置文件_config.yml中post_asset_folder属性改为true。 这时假使我们创建新post， 1hexo new post_name 我们将在_post文件夹下获得post_name.md文件以及post_name文件夹。post_name文件夹用于存储引入的图片。同时在post_name.md中引入图片： 1&#123;% asset_img img_name img_alt %&#125; 为什么不使用![]方法Hexo本身使用![]方法插入图片是没有问题的， 1![img_alt](img_name) 在post下也可正常显示。然而在next主题中，如加入read more功能时，主页中图片的路径会因为使用相对路径而无法正常显示。因此此时选择使用hexo3新方法：{}。]]></content>
       <categories>
         <category>Blog</category>
       </categories>
