@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Ubuntu中apt源与pip源替换]]></title>
     <url>%2F2019%2F10%2F03%2FUbuntu%E4%B8%ADapt%E6%BA%90%E4%B8%8Epip%E6%BA%90%E6%9B%BF%E6%8D%A2%2F</url>
-    <content type="text"><![CDATA[Advanced Packaging Tool (apt) 是Linux下的安装包管理工具。pip 是 Python 包管理工具,该工具提供了对Python 包的查找、下载、安装、卸载的功能。更换源的必要性在于提高各种包的下载速度。 Apt源更换为阿里镜像源进入ubuntu“软件与更新”。ubuntu软件分页中，“下载自”选项选择使用http://mirros.aliyun.com/ubuntu阿里云镜像源。 Pip源更换为清华源修改 ~/.pip/pip.conf (没有可自行创建)，修改index-url至tuna，内容如下： 12[global]index-url = https://pypi.tuna.tsinghua.edu.cn/simple Conda源更换为清华源输入如下两行命令： 12conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --set show_channel_urls yes]]></content>
+    <content type="text"><![CDATA[Advanced Packaging Tool (apt) 是Linux下的安装包管理工具。Pip 是 Python 包管理工具,该工具提供了对Python 包的查找、下载、安装、卸载的功能。更换源的必要性在于提高各种包的下载速度。 Apt源更换为阿里镜像源进入ubuntu“软件与更新”。ubuntu软件分页中，“下载自”选项选择使用http://mirros.aliyun.com/ubuntu 阿里云镜像源。 Pip源更换为清华源修改 ~/.pip/pip.conf (没有可自行创建)，修改index-url至tuna，内容如下： 12[global]index-url = https://pypi.tuna.tsinghua.edu.cn/simple Conda源更换为清华源输入如下两行命令： 12conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/conda config --set show_channel_urls yes]]></content>
       <categories>
         <category>Linux</category>
       </categories>
