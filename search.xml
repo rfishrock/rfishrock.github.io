@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Ubuntu中typora安装]]></title>
-    <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADtypora%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[Markdown编辑器与阅读器。 安装1234wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -sudo add-apt-repository 'deb https://typora.io/linux ./'sudo apt-get updatesudo apt-get install typora MarkdownMarkdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。 当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。 菜鸟教程 https://www.runoob.com/markdown/md-tutorial.html]]></content>
+    <title><![CDATA[Ubuntu中NVIDIA驱动安装]]></title>
+    <url>%2F2019%2F10%2F08%2FUbuntu%E4%B8%ADNVIDIA%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Ubuntu系统中本身不带有英伟达显卡驱动，然而如果需要安装CUDA、CUDNN则必须有驱动支持。 获取显卡支持驱动的版本https://www.nvidia.com/Download/index.aspx 提供该显卡目前版本驱动 https://www.geforce.cn/drivers 提供该显卡支持的所有驱动 通过以上两个网址可以获得显卡支持的驱动版本信息以及驱动下载。相对来说比较推荐采用第二个网址取获得多个版本的驱动，因为新版驱动相对支持的CUDA以及模型较少。 关于是否需要禁用Nouveau这里先提前讨论一下关于网上教程一般会提到的禁用Nouveau问题。Nouveau是第三方的开源NVIDIA驱动。然而目前也有教程上提过一些方法安装驱动不需要禁用Nouveau与图形界面。之前的配置经验中确实也有过在不禁用情况下，成功安装了驱动。因此，是否禁用Nouveau，是否会因此造成什么样的问题，目前还不好定论。 安装驱动这里介绍三种安装Nvidia驱动的方法，可以根据自己的需要进行安装。 使用标准Ubuntu库安装驱动 检测显卡型号以及推荐的驱动： 1ubuntu-drivers devices 从此命令中可以获得显卡所支持的驱动版本，包括系统推荐的驱动版本。 如果选择安装推荐的驱动版本，则也直接使用命令： 1sudo ubuntu-drivers autoinstall 如果想自己选择安装的版本，则可以使用： 1sudo apt install nvidia-version 重启系统。 使用PPA库安装驱动PPA为Personal Package Archives的缩写，即个人软件包档案。 Personal Package Archives（个人软件包档案）是Ubuntu Launchpad网站提供的一项服务，允许个人用户上传软件源代码，通过Launchpad进行编译并发布为2进制软件包，作为apt/新立得源供其他用户下载和更新。在Launchpad网站上的每一个用户和团队都可以拥有一个或多个PPA。 使用PPA库可安装不稳定版本的Beta驱动。 添加PPA库至系统中： 12sudo add-apt-repository ppa:graphics-drivers/ppasudo apt update 后续步骤可参考3.1中步骤1-3。 手动安装NVIDIA官方网站中驱动 识别NVIDIA VGA卡： 1lshw -numeric -C display 或者： 1lspci -vnn | grep VGA 从官方网站中下载驱动。 禁用默认的Nouveau驱动。 将Nouveau驱动加入黑名单。 12sudo bash -c "echo blacklist nouveau &gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf"sudo bash -c "echo options nouveau modeset=0 &gt;&gt; /etc/modprobe.d/blacklist-nvidia-nouveau.conf" 验证新modprobe config文件内容： 1cat /etc/modprobe.d/blacklist-nvidia-nouveau.conf 应显示： 12blacklist nouveauoptions nouveau modeset=0 更新Kernel initramfs： 1sudo update-initramfs -u 重启系统： 1sudo reboot 验证Nouveau是否已经禁用： 1lsmod | grep nouveau 无显示则已经禁用。 此步骤之前确保系统已经重启并禁用Nouveau。暂停图形界面： 1sudo telinit 3 按CTRL+ALT+F1进入TTY1会话，并使用用户名与密码登录。 启用驱动安装： 1bash NVIDIA-Linux-x86_64-version.bin 重启系统。 验证驱动是否安装安装完成后，可通过NVIDIA X Server Settings验证驱动版本。]]></content>
       <categories>
         <category>Linux</category>
       </categories>
       <tags>
         <tag>Linux</tag>
-        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -21,6 +20,18 @@
       </categories>
       <tags>
         <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu中typora安装]]></title>
+    <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADtypora%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[Markdown编辑器与阅读器。 安装1234wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -sudo add-apt-repository 'deb https://typora.io/linux ./'sudo apt-get updatesudo apt-get install typora MarkdownMarkdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。 当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。 菜鸟教程 https://www.runoob.com/markdown/md-tutorial.html]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Markdown</tag>
       </tags>
   </entry>
   <entry>
