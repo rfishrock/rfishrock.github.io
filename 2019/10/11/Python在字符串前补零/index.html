@@ -55,21 +55,19 @@
   };
 </script>
 
-  <meta name="description" content="Markdown编辑器与阅读器。">
-<meta name="keywords" content="Linux,Markdown">
+  <meta name="description" content="用于对不规则字符串（如命名）进行转换。">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu中typora安装">
-<meta property="og:url" content="http://yoursite.com/2019/10/07/Ubuntu中typora安装/index.html">
+<meta property="og:title" content="Python在字符串前补零">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/Python在字符串前补零/index.html">
 <meta property="og:site_name" content="RFiSH">
-<meta property="og:description" content="Markdown编辑器与阅读器。">
+<meta property="og:description" content="用于对不规则字符串（如命名）进行转换。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/10/07/Ubuntu中typora安装/typoraPage.png">
-<meta property="og:updated_time" content="2019-10-07T08:15:13.865Z">
+<meta property="og:updated_time" content="2019-10-11T06:51:48.923Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu中typora安装">
-<meta name="twitter:description" content="Markdown编辑器与阅读器。">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/07/Ubuntu中typora安装/typoraPage.png">
-  <link rel="canonical" href="http://yoursite.com/2019/10/07/Ubuntu中typora安装/">
+<meta name="twitter:title" content="Python在字符串前补零">
+<meta name="twitter:description" content="用于对不规则字符串（如命名）进行转换。">
+  <link rel="canonical" href="http://yoursite.com/2019/10/11/Python在字符串前补零/">
 
 
 <script id="page-configurations">
@@ -83,7 +81,7 @@
   };
 </script>
 
-  <title>Ubuntu中typora安装 | RFiSH</title>
+  <title>Python在字符串前补零 | RFiSH</title>
   
 
 
@@ -269,7 +267,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/07/Ubuntu中typora安装/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/Python在字符串前补零/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RFishRock">
@@ -281,7 +279,7 @@
       <meta itemprop="name" content="RFiSH">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Ubuntu中typora安装
+        <h1 class="post-title" itemprop="name headline">Python在字符串前补零
 
           
         </h1>
@@ -297,7 +295,7 @@
                 
               
 
-              <time title="创建时间：2019-10-07 00:00:00 / 修改时间：16:15:13" itemprop="dateCreated datePublished" datetime="2019-10-07T00:00:00+08:00">2019-10-07</time>
+              <time title="创建时间：2019-10-11 00:00:00 / 修改时间：14:51:48" itemprop="dateCreated datePublished" datetime="2019-10-11T00:00:00+08:00">2019-10-11</time>
             </span>
           
             
@@ -310,7 +308,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a></span>
 
                 
                 
@@ -329,16 +327,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <img src="/2019/10/07/Ubuntu中typora安装/typoraPage.png" title="typoraPage">
-
-<p>Markdown编辑器与阅读器。</p>
+        <p>用于对不规则字符串（如命名）进行转换。</p>
 <a id="more"></a>
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -</span><br><span class="line">sudo add-apt-repository <span class="string">'deb https://typora.io/linux ./'</span></span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install typora</span><br></pre></td></tr></table></figure>
+<h2 id="zfill-amp-rjust"><a href="#zfill-amp-rjust" class="headerlink" title="zfill() &amp; rjust()"></a>zfill() &amp; rjust()</h2><p>Python zfill() 方法返回指定长度的字符串，原字符串右对齐，前面填充0。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.zfill(width)</span><br></pre></td></tr></table></figure>
 
-<h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
-<p>当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。</p>
-<p>菜鸟教程 <a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/markdown/md-tutorial.html</a></p>
+<p>Python rjust() 返回一个原字符串右对齐,并使用空格填充至长度 width 的新字符串。如果指定的长度小于字符串的长度则返回原字符串。</p>
+<ul>
+<li>width – 指定填充指定字符后中字符串的总长度.</li>
+<li>fillchar – 填充的字符，默认为空格。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.rjust(width[, fillchar])</span><br></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img_name = <span class="string">"1011"</span></span><br><span class="line"></span><br><span class="line">print(img_name.zfill(<span class="number">6</span>))</span><br><span class="line">print(img_name.rjust(<span class="number">6</span>, <span class="string">'0'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">001011</span><br><span class="line">001011</span><br></pre></td></tr></table></figure>
+
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>补充特殊情况。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img_name = <span class="string">"1011"</span></span><br><span class="line"></span><br><span class="line">print(img_name.zfill(<span class="number">1</span>))</span><br><span class="line">print(img_name.rjust(<span class="number">1</span>, <span class="string">'0'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1011</span></span><br><span class="line"><span class="number">1011</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -354,9 +367,7 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-            
-              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
             
           </div>
         
@@ -366,8 +377,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/07/Ubuntu中sublime-text安装/" rel="next" title="Ubuntu中sublime text安装">
-                  <i class="fa fa-chevron-left"></i> Ubuntu中sublime text安装
+                <a href="/2019/10/08/Ubuntu中NVIDIA驱动安装/" rel="next" title="Ubuntu中NVIDIA驱动安装">
+                  <i class="fa fa-chevron-left"></i> Ubuntu中NVIDIA驱动安装
                 </a>
               
             </div>
@@ -375,10 +386,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/10/08/Ubuntu中NVIDIA驱动安装/" rel="prev" title="Ubuntu中NVIDIA驱动安装">
-                  Ubuntu中NVIDIA驱动安装 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -427,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown"><span class="nav-number">2.</span> <span class="nav-text">Markdown</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#zfill-amp-rjust"><span class="nav-number">1.</span> <span class="nav-text">zfill() &amp; rjust()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">2.</span> <span class="nav-text">补充</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
