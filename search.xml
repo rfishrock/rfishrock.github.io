@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LibLAS编译安装]]></title>
+    <url>%2F2019%2F11%2F07%2FLibLAS%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[LibLAS是一个C/C++库，用于读取和写入常见的LAS LIDAR格式。 编译GeoTIFF12345wget https://download.osgeo.org/geotiff/libgeotiff/libgeotiff-1.3.0.tar.gztar libgeotiff-1.3.0.tar.gz &amp;&amp; cd libgeotiff-1.3.0./configuremakesudo make install 编译libLAS1234mkdir makefiles &amp;&amp; cd makefilescmake -G "Unix Makefiles" ..makemake install 验证1lasinfo &lt;file_path&gt;]]></content>
+      <categories>
+        <category>LIDAR</category>
+      </categories>
+      <tags>
+        <tag>LIDAR</tag>
+        <tag>Environment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[本地hexo博客迁移]]></title>
+    <url>%2F2019%2F11%2F07%2F%E6%9C%AC%E5%9C%B0hexo%E5%BA%93%E8%BF%81%E7%A7%BB%2F</url>
+    <content type="text"><![CDATA[Hexo搭建可参考：https://rfishrock.github.io/2016/10/03/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/ 复制原本地文件将下面的文件或文件夹复制到新的博客目录下进行替换： 123_config.ymlsource/themes/ Hexo各文件说明.deploy：执行hexo deploy命令部署到GitHub上的内容目录 public：执行hexo generate命令，输出的静态网页内容目录 scaffolds：layout模板文件目录，其中的md文件可以添加编辑 scripts：扩展脚本目录，这里可以自定义一些javascript脚本 source：文章源码目录，该目录下的markdown和html文件均会被hexo处理。该页面对应repo的根目录，404文件、favicon.ico文件，CNAME文件等都应该放这里，该目录下可新建页面目录。 _drafts：草稿文章 _posts：发布文章 themes：主题文件目录 _config.yml：全局配置文件，大多数的设置都在这里 package.json：应用程序数据，指明hexo的版本等信息，类似于一般软件中的关于按钮 Referencehttps://www.jianshu.com/p/a713bd430e0f]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LivoxNote]]></title>
     <url>%2F2019%2F11%2F05%2FLivoxNote%2F</url>
     <content type="text"><![CDATA[产品概述 坐标系]]></content>
@@ -148,6 +172,7 @@
       </categories>
       <tags>
         <tag>Blog</tag>
+        <tag>Hexo</tag>
         <tag>Git</tag>
       </tags>
   </entry>
