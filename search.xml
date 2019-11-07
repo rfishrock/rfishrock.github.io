@@ -48,17 +48,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[算法复杂度Note]]></title>
-    <url>%2F2019%2F10%2F30%2F%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%2F</url>
-    <content type="text"><![CDATA[在大O符号表示法中，时间复杂度的公式是： T(n) = O( f(n) )，其中f(n) 表示每行代码执行次数之和，而 O 表示正比例关系，这个公式的全称是：算法的渐进时间复杂度。 常见的时间复杂度量级从上至下依次的时间复杂度越来越大，执行的效率越来越低。 常数阶O(1) 对数阶O(logN) 线性阶O(n) 线性对数阶O(nlogN) 平方阶O(n^2) 立方阶O(n^3) K次方阶O(n^k) 指数阶(2^n) 常数阶O(1)无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如： 12345int i = 1;int j = 2;++i;j++;int m = i + j; 上述代码在执行的时候，它消耗的时候并不随着某个变量的增长而增长，那么无论这类代码有多长，即使有几万几十万行，都可以用O(1)来表示它的时间复杂度。 对数阶O(logN)12345int i = 1;while(i &lt; n)&#123; i = i * 2;&#125; 从上面代码可以看到，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了。我们试着求解一下，假设循环x次之后，i 就大于 n 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 x = log2n。 也就是说当循环log2n次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logn)。 线性阶O(n)12345for(i=1; i&lt;=n; ++i)&#123; j = i; j++;&#125; 这段代码，for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。 线性对数阶O(nlogN)线性对数阶O(nlogN) 其实非常容易理解，将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了O(nlogN)。 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i &lt; n) &#123; i = i * 2; &#125;&#125; 平方阶O(n^2)如果把 O(n) 的代码再嵌套循环一遍，它的时间复杂度就是 O(n²) 了。 12345678for(x=1; i&lt;=n; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 这段代码其实就是嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)如果将其中一层循环的n改成m，即： 12345678for(x=1; i&lt;=m; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 那它的时间复杂度就变成了 O(m*n) 立方阶O(n^3)、K次方阶O(n^k)参考上面的O(n^2) 去理解就好了，O(n^3)相当于三层n循环，其它的类似。 Referencehttps://blog.csdn.net/jsjwk/article/details/84315770]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[TensorFlow各版本对应]]></title>
     <url>%2F2019%2F10%2F30%2FTensorFlow%E5%90%84%E7%89%88%E6%9C%AC%E5%AF%B9%E5%BA%94%2F</url>
     <content type="text"><![CDATA[TensorFlow对应各环境下的版本，即不同版本下所需环境。 Windowshttps://tensorflow.google.cn/install/source_windows CPU GPU Linuxhttps://tensorflow.google.cn/install/source CPU GPU macOSCPU GPU]]></content>
@@ -68,6 +57,17 @@
       <tags>
         <tag>TensorFlow</tag>
         <tag>DeepLearning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[算法复杂度Note]]></title>
+    <url>%2F2019%2F10%2F30%2F%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[在大O符号表示法中，时间复杂度的公式是： T(n) = O( f(n) )，其中f(n) 表示每行代码执行次数之和，而 O 表示正比例关系，这个公式的全称是：算法的渐进时间复杂度。 常见的时间复杂度量级从上至下依次的时间复杂度越来越大，执行的效率越来越低。 常数阶O(1) 对数阶O(logN) 线性阶O(n) 线性对数阶O(nlogN) 平方阶O(n^2) 立方阶O(n^3) K次方阶O(n^k) 指数阶(2^n) 常数阶O(1)无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如： 12345int i = 1;int j = 2;++i;j++;int m = i + j; 上述代码在执行的时候，它消耗的时候并不随着某个变量的增长而增长，那么无论这类代码有多长，即使有几万几十万行，都可以用O(1)来表示它的时间复杂度。 对数阶O(logN)12345int i = 1;while(i &lt; n)&#123; i = i * 2;&#125; 从上面代码可以看到，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了。我们试着求解一下，假设循环x次之后，i 就大于 n 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 x = log2n。 也就是说当循环log2n次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logn)。 线性阶O(n)12345for(i=1; i&lt;=n; ++i)&#123; j = i; j++;&#125; 这段代码，for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。 线性对数阶O(nlogN)线性对数阶O(nlogN) 其实非常容易理解，将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了O(nlogN)。 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i &lt; n) &#123; i = i * 2; &#125;&#125; 平方阶O(n^2)如果把 O(n) 的代码再嵌套循环一遍，它的时间复杂度就是 O(n²) 了。 12345678for(x=1; i&lt;=n; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 这段代码其实就是嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)如果将其中一层循环的n改成m，即： 12345678for(x=1; i&lt;=m; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 那它的时间复杂度就变成了 O(m*n) 立方阶O(n^3)、K次方阶O(n^k)参考上面的O(n^2) 去理解就好了，O(n^3)相当于三层n循环，其它的类似。 Referencehttps://blog.csdn.net/jsjwk/article/details/84315770]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -172,8 +172,8 @@
       </categories>
       <tags>
         <tag>Blog</tag>
-        <tag>Hexo</tag>
         <tag>Git</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
