@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[libLAS编译安装]]></title>
-    <url>%2F2019%2F11%2F07%2FLibLAS%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[libLAS是一个C/C++库，用于读取和写入常见的LAS LIDAR格式。 编译GeoTIFF12345wget https://download.osgeo.org/geotiff/libgeotiff/libgeotiff-1.3.0.tar.gztar libgeotiff-1.3.0.tar.gz &amp;&amp; cd libgeotiff-1.3.0./configuremakesudo make install 编译libLAS1234mkdir makefiles &amp;&amp; cd makefilescmake -G "Unix Makefiles" ..makemake install 验证1lasinfo &lt;file_path&gt; PDAL截至2018年，libLAS已经被PDAL项目取代，进入休眠和维护状态。libLAS不提供PDAL提供的对LAS或LAZ 1.4的支持。 并且PDAL提供Python的支持。]]></content>
+    <title><![CDATA[PCLNote]]></title>
+    <url>%2F2019%2F11%2F14%2FPCLNote%2F</url>
+    <content type="text"><![CDATA[PCL（Point Cloud Library， 点云库）是一个大型跨平台开源C++编程库，实现了大量点云相关的通用算法和高效数据结构。 PCL是BSD授权方式，可以免费进行商业和学术的应用。 包含模块 分割 (Segmentation) 特征描述与提取 (Features) 可视化 (Visualization) 曲面重建 (Surface) 识别 (Recognition) 检索 (Search) 配准 (Registration) 关键点 (Keypoints) 滤波 (Filters) 采样一致性 (Sample consensus) 八叉树 (octree) 通用模块 (common) 输入输出 (IO) k维树 (kdtree) 适用平台 普通多核或单核计算机（x86…） 嵌入式专用系统（ARM …） RGBD及其他点云获取设备 GPU kdtree, octree三维测量设备获取的点云数据，具有数据量大、分布不均匀等特点。作为三维领域里面另一个重要的数据来源，点云数据主要是表征目标表面的海量点集合，并不具备传统实体网格数据的几何拓扑信息。点云数据处理中最为核心的问题就是建立离散点间的拓扑关系，实现基于领域关系的快速查找。 建立空间索引在点云数据处理中被广泛应用，而这些结构中，k-d tree和八叉树在3D点云数据组织中的应用较为广泛。PCL对八叉树的数据结构建立和索引方法进行了实现，以方便在此基础上的其他点云处理操作。 Filters在获取点云数据时，由于环境等因素带来的影响，以及电磁波衍射特性、被测物体表面性质变化和数据拼接配准操作过程的影响，点云数据将不可避免地出现一些噪声点。 实际应用中，除了测量随机误差产生的噪声点之外，由于受到外界干扰如视线遮挡、障碍物等因素的影响，点云数据中往往存在着一些离主体点云（即被测物体点云）较远的离散点，即离群点，不同的获取设备点云噪声结构也有不同，其它可以通过滤波重采样完成的工作，有空洞修复、信息损失最小海量点云数据压缩处理等。 在点云处理流程中，滤波处理作为预处理的第一步，往往对后续处理管道影响很大，只有在滤波预处理中将噪声点、离群点、孔洞、数据压缩等按照后续处理定制，才能够更好地进行配准等后续应用处理。 PCL中点云滤波模块提供了很多灵活实用的滤波处理算法，例如双边滤波、高斯滤波、条件滤波、直通滤波、基于随机采样一致性滤波等，关键的滤波模块是作为PCL的一个处理成员模块，其在应用中与其它点云处理流程集成。 Keypoints关键点也称为兴趣点，它是2D图像、3D点云或曲面模型上，可以通过定义检测标注来获取的具有稳定性、区别性的点集。 从技术上来说，关键点的数量相比与原始点云或图像的数据量小很多，它与局部特征描述子结合在一起，组成关键点描述子，常用来形成原始数据的紧凑表示，而且不失代表性与描述性，从而可以加快后续识别、追踪等对数据的处理速度。关键点提取是2D与3D信息处理中不可或缺的关键技术。 Sample consensus在CV领域广泛应用各种不同的采样一致性参数估计算法，用于排除错误的样本，样本不同，对应的应用则不同，例如剔除错误的配准点对，分割出处在模型上的点集等。 PCL中以随机采样一致性算法（RANSAC）为核心，同时实现了五种类似于随机采样一致性估计（RANSAC）、最大似然一致性估计（MLESAC）、最大中值方差一致性估计（LMEDS）等，所有的估计参数算法都符合一致性准则。 Features3D点云特征描述与提取是点云信息处理中最基础也是最关键的一部分，点云的识别、分割、重采样、配准、曲面重建等处理的大部分算法，都严重依赖特征描述与提取的结果。 从尺度上来分，一般分为局部特征描述和全局特征描述，例如局部的法线等几何形状特征的描述，全局的拓扑特征描述，都属于3D点云特征描述与提取范畴。 在PCL中，目前已有很多基本的特征描述子与提取算法。 Registration在逆向工程、CV、文物数字化等领域中，由于点云的不完整、旋转错位、平移错位等，使得要得到完整点云就需对局部点云就需对点云进行配准。 为了得到被测物体的完整数据模型，需要确定一个合适的坐标变换，将从各个视角得到的点集合并到一个统一的坐标系下，形成一个完整的数据点云，然后就可以方便地进行可视化等操作，这就是点云数据的配准。 点云自动配准有手动配准、依赖仪器的配准和自动配准。通常我们所说的点云配准技术即是指自动配准。 点云自动配准技术是通过一定的算法或者统计学规律，利用计算机计算两块点云之间的错位，从而达到把两片点云配准的效果。其实质是把在不同的坐标系中测量得到的数据点云进行坐标变换，以得到整体的数据模型。问题的关键是如何求得坐标变换参数R（旋转矩阵）和T（变换向量），使得两视角下测得的三维数据经坐标转换后的距离最小。 目前，配准算法按照实现过程可以分为整体配准和局部配准。 PCL中有单独的配准模块，实现了相关的基础数据结构与经典配准算法如ICP等，以及配准过程中的对应点估计、错误对应点去除等流程。配准的关键技术设计关键点选取、与特征描述与提取两部分。 Surface曲面重建技术在逆向工程、数据可视化、机器视觉、虚拟现实、医疗技术等领域中得到了广泛的应用。 根据重建曲面和数据点云之间的关系可将曲面重建分为两大类：插值法和逼近法。前者得到的重建曲面完全通过原始数据点，而后者则是用分片线性曲面或其它形式的曲面来逼近原始数据点，从而使得产生的重建曲面是原始点集的一个逼近。而根据重建曲面的表现形式不同又可以将它分为以下五种：参数曲面重建、隐式曲面重建、变形曲面重建、细分曲面重建和分片线性曲面重建。 PCL中目前实现了基于点云的曲面重建模块框架，在此基础上进一步实现了比较基础的泊松重建、MC重建、Ear Clipping等算法。 Reference《点云库PCL从入门到精通》]]></content>
       <categories>
         <category>LIDAR</category>
       </categories>
       <tags>
         <tag>LIDAR</tag>
-        <tag>Environment</tag>
+        <tag>C++</tag>
       </tags>
   </entry>
   <entry>
@@ -25,14 +25,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[LivoxNote]]></title>
-    <url>%2F2019%2F11%2F05%2FLivoxNote%2F</url>
-    <content type="text"><![CDATA[产品概述 坐标系]]></content>
+    <title><![CDATA[libLAS编译安装]]></title>
+    <url>%2F2019%2F11%2F07%2FLibLAS%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[libLAS是一个C/C++库，用于读取和写入常见的LAS LIDAR格式。 编译GeoTIFF12345wget https://download.osgeo.org/geotiff/libgeotiff/libgeotiff-1.3.0.tar.gztar -xvf libgeotiff-1.3.0.tar.gz &amp;&amp; cd libgeotiff-1.3.0./configuremakesudo make install 编译libLAS1234mkdir makefiles &amp;&amp; cd makefilescmake -G "Unix Makefiles" ..makemake install 验证1lasinfo &lt;file_path&gt; PDAL截至2018年，libLAS已经被PDAL项目取代，进入休眠和维护状态。libLAS不提供PDAL提供的对LAS或LAZ 1.4的支持。 并且PDAL提供Python的支持。]]></content>
       <categories>
         <category>LIDAR</category>
       </categories>
       <tags>
         <tag>LIDAR</tag>
+        <tag>Environment</tag>
       </tags>
   </entry>
   <entry>
@@ -48,14 +49,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[算法复杂度Note]]></title>
-    <url>%2F2019%2F10%2F30%2F%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%2F</url>
-    <content type="text"><![CDATA[在大O符号表示法中，时间复杂度的公式是： T(n) = O( f(n) )，其中f(n) 表示每行代码执行次数之和，而 O 表示正比例关系，这个公式的全称是：算法的渐进时间复杂度。 常见的时间复杂度量级从上至下依次的时间复杂度越来越大，执行的效率越来越低。 常数阶O(1) 对数阶O(logN) 线性阶O(n) 线性对数阶O(nlogN) 平方阶O(n^2) 立方阶O(n^3) K次方阶O(n^k) 指数阶(2^n) 常数阶O(1)无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如： 12345int i = 1;int j = 2;++i;j++;int m = i + j; 上述代码在执行的时候，它消耗的时候并不随着某个变量的增长而增长，那么无论这类代码有多长，即使有几万几十万行，都可以用O(1)来表示它的时间复杂度。 对数阶O(logN)12345int i = 1;while(i &lt; n)&#123; i = i * 2;&#125; 从上面代码可以看到，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了。我们试着求解一下，假设循环x次之后，i 就大于 n 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 x = log2n。 也就是说当循环log2n次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logn)。 线性阶O(n)12345for(i=1; i&lt;=n; ++i)&#123; j = i; j++;&#125; 这段代码，for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。 线性对数阶O(nlogN)线性对数阶O(nlogN) 其实非常容易理解，将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了O(nlogN)。 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i &lt; n) &#123; i = i * 2; &#125;&#125; 平方阶O(n^2)如果把 O(n) 的代码再嵌套循环一遍，它的时间复杂度就是 O(n²) 了。 12345678for(x=1; i&lt;=n; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 这段代码其实就是嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)如果将其中一层循环的n改成m，即： 12345678for(x=1; i&lt;=m; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 那它的时间复杂度就变成了 O(m*n) 立方阶O(n^3)、K次方阶O(n^k)参考上面的O(n^2) 去理解就好了，O(n^3)相当于三层n循环，其它的类似。 Referencehttps://blog.csdn.net/jsjwk/article/details/84315770]]></content>
+    <title><![CDATA[LivoxNote]]></title>
+    <url>%2F2019%2F11%2F05%2FLivoxNote%2F</url>
+    <content type="text"><![CDATA[产品概述 坐标系]]></content>
       <categories>
-        <category>Algorithm</category>
+        <category>LIDAR</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
+        <tag>LIDAR</tag>
       </tags>
   </entry>
   <entry>
@@ -68,6 +69,17 @@
       <tags>
         <tag>TensorFlow</tag>
         <tag>DeepLearning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[算法复杂度Note]]></title>
+    <url>%2F2019%2F10%2F30%2F%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[在大O符号表示法中，时间复杂度的公式是： T(n) = O( f(n) )，其中f(n) 表示每行代码执行次数之和，而 O 表示正比例关系，这个公式的全称是：算法的渐进时间复杂度。 常见的时间复杂度量级从上至下依次的时间复杂度越来越大，执行的效率越来越低。 常数阶O(1) 对数阶O(logN) 线性阶O(n) 线性对数阶O(nlogN) 平方阶O(n^2) 立方阶O(n^3) K次方阶O(n^k) 指数阶(2^n) 常数阶O(1)无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如： 12345int i = 1;int j = 2;++i;j++;int m = i + j; 上述代码在执行的时候，它消耗的时候并不随着某个变量的增长而增长，那么无论这类代码有多长，即使有几万几十万行，都可以用O(1)来表示它的时间复杂度。 对数阶O(logN)12345int i = 1;while(i &lt; n)&#123; i = i * 2;&#125; 从上面代码可以看到，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了。我们试着求解一下，假设循环x次之后，i 就大于 n 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 x = log2n。 也就是说当循环log2n次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logn)。 线性阶O(n)12345for(i=1; i&lt;=n; ++i)&#123; j = i; j++;&#125; 这段代码，for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。 线性对数阶O(nlogN)线性对数阶O(nlogN) 其实非常容易理解，将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了O(nlogN)。 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i &lt; n) &#123; i = i * 2; &#125;&#125; 平方阶O(n^2)如果把 O(n) 的代码再嵌套循环一遍，它的时间复杂度就是 O(n²) 了。 12345678for(x=1; i&lt;=n; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 这段代码其实就是嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)如果将其中一层循环的n改成m，即： 12345678for(x=1; i&lt;=m; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 那它的时间复杂度就变成了 O(m*n) 立方阶O(n^3)、K次方阶O(n^k)参考上面的O(n^2) 去理解就好了，O(n^3)相当于三层n循环，其它的类似。 Referencehttps://blog.csdn.net/jsjwk/article/details/84315770]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -93,6 +105,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Ubuntu中sublime text安装]]></title>
+    <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADsublime-text%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[用于日常代码编写，以及文本查看。 安装（Stable）12345wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -sudo apt-get install apt-transport-httpsecho "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.listsudo apt-get updatesudo apt-get install sublime-text 显示编辑器中空格显示空格在于方便检查python等语法的严格缩进。同样适用于Windows下。 菜单中选择Preferences，Settings。在settings-User中添加 1"draw_white_space": "all"]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu中typora安装]]></title>
     <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADtypora%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Markdown编辑器与阅读器。 安装1234wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -sudo add-apt-repository 'deb https://typora.io/linux ./'sudo apt-get updatesudo apt-get install typora MarkdownMarkdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。 当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。 菜鸟教程 https://www.runoob.com/markdown/md-tutorial.html]]></content>
@@ -102,17 +125,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Ubuntu中sublime text安装]]></title>
-    <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADsublime-text%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[用于日常代码编写，以及文本查看。 安装（Stable）12345wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -sudo apt-get install apt-transport-httpsecho "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.listsudo apt-get updatesudo apt-get install sublime-text 显示编辑器中空格显示空格在于方便检查python等语法的严格缩进。同样适用于Windows下。 菜单中选择Preferences，Settings。在settings-User中添加 1"draw_white_space": "all"]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>

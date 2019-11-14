@@ -55,20 +55,19 @@
   };
 </script>
 
-  <meta name="keywords" content="LIDAR">
+  <meta name="description" content="PCL（Point Cloud Library， 点云库）是一个大型跨平台开源C++编程库，实现了大量点云相关的通用算法和高效数据结构。 PCL是BSD授权方式，可以免费进行商业和学术的应用。 包含模块 分割 (Segmentation) 特征描述与提取 (Features) 可视化 (Visualization) 曲面重建 (Surface) 识别 (Recognition) 检索 (Searc">
+<meta name="keywords" content="LIDAR,C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LivoxNote">
-<meta property="og:url" content="http://yoursite.com/2019/11/05/LivoxNote/index.html">
+<meta property="og:title" content="PCLNote">
+<meta property="og:url" content="http://yoursite.com/2019/11/14/PCLNote/index.html">
 <meta property="og:site_name" content="RFiSH">
+<meta property="og:description" content="PCL（Point Cloud Library， 点云库）是一个大型跨平台开源C++编程库，实现了大量点云相关的通用算法和高效数据结构。 PCL是BSD授权方式，可以免费进行商业和学术的应用。 包含模块 分割 (Segmentation) 特征描述与提取 (Features) 可视化 (Visualization) 曲面重建 (Surface) 识别 (Recognition) 检索 (Searc">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/11/05/LivoxNote/Lidar.png">
-<meta property="og:image" content="http://yoursite.com/2019/11/05/LivoxNote/Livox_Intro.png">
-<meta property="og:image" content="http://yoursite.com/2019/11/05/LivoxNote/Livox_Coordinate.png">
-<meta property="og:updated_time" content="2019-11-05T08:38:21.264Z">
+<meta property="og:updated_time" content="2019-11-14T08:21:56.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LivoxNote">
-<meta name="twitter:image" content="http://yoursite.com/2019/11/05/LivoxNote/Lidar.png">
-  <link rel="canonical" href="http://yoursite.com/2019/11/05/LivoxNote/">
+<meta name="twitter:title" content="PCLNote">
+<meta name="twitter:description" content="PCL（Point Cloud Library， 点云库）是一个大型跨平台开源C++编程库，实现了大量点云相关的通用算法和高效数据结构。 PCL是BSD授权方式，可以免费进行商业和学术的应用。 包含模块 分割 (Segmentation) 特征描述与提取 (Features) 可视化 (Visualization) 曲面重建 (Surface) 识别 (Recognition) 检索 (Searc">
+  <link rel="canonical" href="http://yoursite.com/2019/11/14/PCLNote/">
 
 
 <script id="page-configurations">
@@ -82,7 +81,7 @@
   };
 </script>
 
-  <title>LivoxNote | RFiSH</title>
+  <title>PCLNote | RFiSH</title>
   
 
 
@@ -268,7 +267,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/LivoxNote/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/14/PCLNote/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="RFishRock">
@@ -280,7 +279,7 @@
       <meta itemprop="name" content="RFiSH">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">LivoxNote
+        <h1 class="post-title" itemprop="name headline">PCLNote
 
           
         </h1>
@@ -296,7 +295,7 @@
                 
               
 
-              <time title="创建时间：2019-11-05 00:00:00 / 修改时间：16:38:21" itemprop="dateCreated datePublished" datetime="2019-11-05T00:00:00+08:00">2019-11-05</time>
+              <time title="创建时间：2019-11-14 00:00:00 / 修改时间：16:21:56" itemprop="dateCreated datePublished" datetime="2019-11-14T00:00:00+08:00">2019-11-14</time>
             </span>
           
             
@@ -328,12 +327,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <img src="/2019/11/05/LivoxNote/Lidar.png" title="lidar">
-<a id="more"></a>
+        <p>PCL（Point Cloud Library， 点云库）是一个大型跨平台开源C++编程库，实现了大量点云相关的通用算法和高效数据结构。</p>
+<p>PCL是BSD授权方式，可以免费进行商业和学术的应用。</p>
+<h2 id="包含模块"><a href="#包含模块" class="headerlink" title="包含模块"></a>包含模块</h2><ol>
+<li>分割 (Segmentation)</li>
+<li>特征描述与提取 (Features)</li>
+<li>可视化 (Visualization)</li>
+<li>曲面重建 (Surface)</li>
+<li>识别 (Recognition)</li>
+<li>检索 (Search)</li>
+<li>配准 (Registration)</li>
+<li>关键点 (Keypoints)</li>
+<li>滤波 (Filters)</li>
+<li>采样一致性 (Sample consensus)</li>
+<li>八叉树 (octree)</li>
+<li>通用模块 (common)</li>
+<li>输入输出 (IO)</li>
+<li>k维树 (kdtree)</li>
+</ol>
+<h2 id="适用平台"><a href="#适用平台" class="headerlink" title="适用平台"></a>适用平台</h2><ol>
+<li>普通多核或单核计算机（x86…）</li>
+<li>嵌入式专用系统（ARM …）</li>
+<li>RGBD及其他点云获取设备</li>
+<li>GPU</li>
+</ol>
+<h2 id="kdtree-octree"><a href="#kdtree-octree" class="headerlink" title="kdtree, octree"></a>kdtree, octree</h2><p>三维测量设备获取的点云数据，具有数据量大、分布不均匀等特点。作为三维领域里面另一个重要的数据来源，点云数据主要是表征目标表面的海量点集合，并不具备传统实体网格数据的几何拓扑信息。点云数据处理中最为核心的问题就是建立离散点间的拓扑关系，实现基于领域关系的快速查找。</p>
+<p>建立空间索引在点云数据处理中被广泛应用，而这些结构中，k-d tree和八叉树在3D点云数据组织中的应用较为广泛。PCL对八叉树的数据结构建立和索引方法进行了实现，以方便在此基础上的其他点云处理操作。</p>
+<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h2><p>在获取点云数据时，由于环境等因素带来的影响，以及电磁波衍射特性、被测物体表面性质变化和数据拼接配准操作过程的影响，点云数据将不可避免地出现一些噪声点。</p>
+<p>实际应用中，除了测量随机误差产生的噪声点之外，由于受到外界干扰如视线遮挡、障碍物等因素的影响，点云数据中往往存在着一些离主体点云（即被测物体点云）较远的离散点，即离群点，不同的获取设备点云噪声结构也有不同，其它可以通过滤波重采样完成的工作，有空洞修复、信息损失最小海量点云数据压缩处理等。</p>
+<p>在点云处理流程中，滤波处理作为预处理的第一步，往往对后续处理管道影响很大，只有在滤波预处理中将噪声点、离群点、孔洞、数据压缩等按照后续处理定制，才能够更好地进行配准等后续应用处理。</p>
+<p>PCL中点云滤波模块提供了很多灵活实用的滤波处理算法，例如双边滤波、高斯滤波、条件滤波、直通滤波、基于随机采样一致性滤波等，关键的滤波模块是作为PCL的一个处理成员模块，其在应用中与其它点云处理流程集成。</p>
+<h2 id="Keypoints"><a href="#Keypoints" class="headerlink" title="Keypoints"></a>Keypoints</h2><p>关键点也称为兴趣点，它是2D图像、3D点云或曲面模型上，可以通过定义检测标注来获取的具有稳定性、区别性的点集。</p>
+<p>从技术上来说，关键点的数量相比与原始点云或图像的数据量小很多，它与局部特征描述子结合在一起，组成关键点描述子，常用来形成原始数据的紧凑表示，而且不失代表性与描述性，从而可以加快后续识别、追踪等对数据的处理速度。关键点提取是2D与3D信息处理中不可或缺的关键技术。</p>
+<h2 id="Sample-consensus"><a href="#Sample-consensus" class="headerlink" title="Sample consensus"></a>Sample consensus</h2><p>在CV领域广泛应用各种不同的采样一致性参数估计算法，用于排除错误的样本，样本不同，对应的应用则不同，例如剔除错误的配准点对，分割出处在模型上的点集等。</p>
+<p>PCL中以随机采样一致性算法（RANSAC）为核心，同时实现了五种类似于随机采样一致性估计（RANSAC）、最大似然一致性估计（MLESAC）、最大中值方差一致性估计（LMEDS）等，所有的估计参数算法都符合一致性准则。</p>
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><p>3D点云特征描述与提取是点云信息处理中最基础也是最关键的一部分，点云的识别、分割、重采样、配准、曲面重建等处理的大部分算法，都严重依赖特征描述与提取的结果。</p>
+<p>从尺度上来分，一般分为局部特征描述和全局特征描述，例如局部的法线等几何形状特征的描述，全局的拓扑特征描述，都属于3D点云特征描述与提取范畴。</p>
+<p>在PCL中，目前已有很多基本的特征描述子与提取算法。</p>
+<h2 id="Registration"><a href="#Registration" class="headerlink" title="Registration"></a>Registration</h2><p>在逆向工程、CV、文物数字化等领域中，由于点云的不完整、旋转错位、平移错位等，使得要得到完整点云就需对局部点云就需对点云进行配准。</p>
+<p>为了得到被测物体的完整数据模型，需要确定一个合适的坐标变换，将从各个视角得到的点集合并到一个统一的坐标系下，形成一个完整的数据点云，然后就可以方便地进行可视化等操作，这就是点云数据的配准。</p>
+<p>点云自动配准有手动配准、依赖仪器的配准和自动配准。通常我们所说的点云配准技术即是指自动配准。</p>
+<p>点云自动配准技术是通过一定的算法或者统计学规律，利用计算机计算两块点云之间的错位，从而达到把两片点云配准的效果。其实质是把在不同的坐标系中测量得到的数据点云进行坐标变换，以得到整体的数据模型。问题的关键是如何求得坐标变换参数R（旋转矩阵）和T（变换向量），使得两视角下测得的三维数据经坐标转换后的距离最小。</p>
+<p>目前，配准算法按照实现过程可以分为整体配准和局部配准。</p>
+<p>PCL中有单独的配准模块，实现了相关的基础数据结构与经典配准算法如ICP等，以及配准过程中的对应点估计、错误对应点去除等流程。配准的关键技术设计关键点选取、与特征描述与提取两部分。</p>
+<h2 id="Surface"><a href="#Surface" class="headerlink" title="Surface"></a>Surface</h2><p>曲面重建技术在逆向工程、数据可视化、机器视觉、虚拟现实、医疗技术等领域中得到了广泛的应用。</p>
+<p>根据重建曲面和数据点云之间的关系可将曲面重建分为两大类：插值法和逼近法。前者得到的重建曲面完全通过原始数据点，而后者则是用分片线性曲面或其它形式的曲面来逼近原始数据点，从而使得产生的重建曲面是原始点集的一个逼近。而根据重建曲面的表现形式不同又可以将它分为以下五种：参数曲面重建、隐式曲面重建、变形曲面重建、细分曲面重建和分片线性曲面重建。</p>
+<p>PCL中目前实现了基于点云的曲面重建模块框架，在此基础上进一步实现了比较基础的泊松重建、MC重建、Ear Clipping等算法。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>《点云库PCL从入门到精通》</p>
 
-<h2 id="产品概述"><a href="#产品概述" class="headerlink" title="产品概述"></a>产品概述</h2><img src="/2019/11/05/LivoxNote/Livox_Intro.png" title="introduction">
-
-<h2 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h2><img src="/2019/11/05/LivoxNote/Livox_Coordinate.png" title="coordinate">
     </div>
 
     
@@ -350,6 +391,8 @@
             
               <a href="/tags/LIDAR/" rel="tag"># LIDAR</a>
             
+              <a href="/tags/C/" rel="tag"># C++</a>
+            
           </div>
         
 
@@ -358,8 +401,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/30/TensorFlow各版本对应/" rel="next" title="TensorFlow各版本对应">
-                  <i class="fa fa-chevron-left"></i> TensorFlow各版本对应
+                <a href="/2019/11/07/本地hexo库迁移/" rel="next" title="本地hexo博客迁移">
+                  <i class="fa fa-chevron-left"></i> 本地hexo博客迁移
                 </a>
               
             </div>
@@ -367,10 +410,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/11/05/开源许可证Note/" rel="prev" title="开源许可证Note">
-                  开源许可证Note <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
@@ -419,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#产品概述"><span class="nav-number">1.</span> <span class="nav-text">产品概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#坐标系"><span class="nav-number">2.</span> <span class="nav-text">坐标系</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#包含模块"><span class="nav-number">1.</span> <span class="nav-text">包含模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用平台"><span class="nav-number">2.</span> <span class="nav-text">适用平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kdtree-octree"><span class="nav-number">3.</span> <span class="nav-text">kdtree, octree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filters"><span class="nav-number">4.</span> <span class="nav-text">Filters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keypoints"><span class="nav-number">5.</span> <span class="nav-text">Keypoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-consensus"><span class="nav-number">6.</span> <span class="nav-text">Sample consensus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Features"><span class="nav-number">7.</span> <span class="nav-text">Features</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Registration"><span class="nav-number">8.</span> <span class="nav-text">Registration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Surface"><span class="nav-number">9.</span> <span class="nav-text">Surface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">10.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
