@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="RFiSH">
 <meta property="og:description" content="类别 排序方法 时间复杂度（平均） 时间复杂度（最好） 时间复杂度（最坏） 空间复杂度 稳定度    插入排序 直接插入 O(n2) O(n) O(n2) O(1) √    希尔排序 O(n1.3) O(n) O(n2) O(1) ×   选择排序 直接排序 O(n2) O(n2) O(n2) O(1) ×    堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T05:11:00.896Z">
+<meta property="og:updated_time" content="2019-11-30T09:01:33.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法Note">
 <meta name="twitter:description" content="类别 排序方法 时间复杂度（平均） 时间复杂度（最好） 时间复杂度（最坏） 空间复杂度 稳定度    插入排序 直接插入 O(n2) O(n) O(n2) O(1) √    希尔排序 O(n1.3) O(n) O(n2) O(1) ×   选择排序 直接排序 O(n2) O(n2) O(n2) O(1) ×    堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1)">
@@ -295,7 +295,7 @@
                 
               
 
-              <time title="创建时间：2019-11-30 00:00:00 / 修改时间：13:11:00" itemprop="dateCreated datePublished" datetime="2019-11-30T00:00:00+08:00">2019-11-30</time>
+              <time title="创建时间：2019-11-30 00:00:00 / 修改时间：17:01:33" itemprop="dateCreated datePublished" datetime="2019-11-30T00:00:00+08:00">2019-11-30</time>
             </span>
           
             
@@ -405,14 +405,17 @@
 <tr>
 <td align="center">基数排序</td>
 <td align="center"></td>
-<td align="center">O(d(r+n))</td>
-<td align="center">O(d(n+rd))</td>
-<td align="center">O(d(r+n))</td>
-<td align="center">O(rd+n)</td>
+<td align="center">O(d(r+n))<br>O(n*k)</td>
+<td align="center">O(d(n+rd))<br>O(n*k)</td>
+<td align="center">O(d(r+n))<br>O(n*k)</td>
+<td align="center">O(rd+n)<br>O(n+k)</td>
 <td align="center">√</td>
 </tr>
 </tbody></table>
+<p>基数排序中，r表示关键字的基数，d表示长度，n表示关键字个数。</p>
 <a id="more"></a>
+
+<p>不稳定算法：快些选堆（快排，希尔，直接选择，堆）。</p>
 
     </div>
 
@@ -438,8 +441,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/11/25/无法生成cv2-soSolution/" rel="next" title="无法生成cv2.soSolution">
-                  <i class="fa fa-chevron-left"></i> 无法生成cv2.soSolution
+                <a href="/2019/11/30/MarkdownNote/" rel="next" title="MarkdownNote">
+                  <i class="fa fa-chevron-left"></i> MarkdownNote
                 </a>
               
             </div>
@@ -447,10 +450,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/11/30/MarkdownNote/" rel="prev" title="MarkdownNote">
-                  MarkdownNote <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
