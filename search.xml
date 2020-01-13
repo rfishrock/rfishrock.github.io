@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[图标]]></title>
+    <url>%2F2020%2F01%2F13%2F%E5%9B%BE%E6%A0%87%2F</url>
+    <content type="text"><![CDATA[Icons made by Smashicons from www.flaticon.com]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[CMakeList.txtNote]]></title>
     <url>%2F2019%2F12%2F11%2FCMakeList-txtNote%2F</url>
     <content type="text"><![CDATA[1234567891011121314151617181920cmake_minimum_required(VERSION 3.15)project(PCL_DETECT)set(CMAKE_CXX_STANDARD 14)add_executable(PCL_Detect main.cpp)find_package(libLAS REQUIRED)find_package(VTK REQUIRED)include_directories(/usr/local/include/liblas)include_directories(/usr/local/include/pcl-1.8)include_directories(/usr/local/include/eigen3)include_directories(/usr/local/include/vtk-5.10)target_link_libraries(PCL_Detect /usr/local/lib/liblas.so)target_link_libraries(PCL_Detect /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.58.0)target_link_libraries(PCL_Detect /usr/lib/x86_64-linux-gnu/libboost_system.so.1.58.0)target_link_libraries(PCL_Detect /usr/lib/libpcl_visualization.so)target_link_libraries(PCL_Detect /usr/lib/libpcl_io.so.1.8)]]></content>
@@ -59,8 +64,8 @@
         <category>LIDAR</category>
       </categories>
       <tags>
-        <tag>LIDAR</tag>
         <tag>C++</tag>
+        <tag>LIDAR</tag>
       </tags>
   </entry>
   <entry>
@@ -111,17 +116,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[算法复杂度Note]]></title>
-    <url>%2F2019%2F10%2F30%2F%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%2F</url>
-    <content type="text"><![CDATA[在大O符号表示法中，时间复杂度的公式是： T(n) = O( f(n) )，其中f(n) 表示每行代码执行次数之和，而 O 表示正比例关系，这个公式的全称是：算法的渐进时间复杂度。 常见的时间复杂度量级从上至下依次的时间复杂度越来越大，执行的效率越来越低。 常数阶O(1) 对数阶O(logN) 线性阶O(n) 线性对数阶O(nlogN) 平方阶O(n^2) 立方阶O(n^3) K次方阶O(n^k) 指数阶(2^n) 常数阶O(1)无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如： 12345int i = 1;int j = 2;++i;j++;int m = i + j; 上述代码在执行的时候，它消耗的时候并不随着某个变量的增长而增长，那么无论这类代码有多长，即使有几万几十万行，都可以用O(1)来表示它的时间复杂度。 对数阶O(logN)12345int i = 1;while(i &lt; n)&#123; i = i * 2;&#125; 从上面代码可以看到，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了。我们试着求解一下，假设循环x次之后，i 就大于 n 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 x = log2n。 也就是说当循环log2n次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logn)。 线性阶O(n)12345for(i=1; i&lt;=n; ++i)&#123; j = i; j++;&#125; 这段代码，for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。 线性对数阶O(nlogN)线性对数阶O(nlogN) 其实非常容易理解，将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了O(nlogN)。 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i &lt; n) &#123; i = i * 2; &#125;&#125; 平方阶O(n^2)如果把 O(n) 的代码再嵌套循环一遍，它的时间复杂度就是 O(n²) 了。 12345678for(x=1; i&lt;=n; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 这段代码其实就是嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)如果将其中一层循环的n改成m，即： 12345678for(x=1; i&lt;=m; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 那它的时间复杂度就变成了 O(m*n) 立方阶O(n^3)、K次方阶O(n^k)参考上面的O(n^2) 去理解就好了，O(n^3)相当于三层n循环，其它的类似。 Referencehttps://blog.csdn.net/jsjwk/article/details/84315770]]></content>
-      <categories>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[TensorFlow各版本对应]]></title>
     <url>%2F2019%2F10%2F30%2FTensorFlow%E5%90%84%E7%89%88%E6%9C%AC%E5%AF%B9%E5%BA%94%2F</url>
     <content type="text"><![CDATA[TensorFlow对应各环境下的版本，即不同版本下所需环境。 Windowshttps://tensorflow.google.cn/install/source_windows CPU GPU Linuxhttps://tensorflow.google.cn/install/source CPU GPU macOSCPU GPU]]></content>
@@ -131,6 +125,17 @@
       <tags>
         <tag>TensorFlow</tag>
         <tag>DeepLearning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[算法复杂度Note]]></title>
+    <url>%2F2019%2F10%2F30%2F%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[在大O符号表示法中，时间复杂度的公式是： T(n) = O( f(n) )，其中f(n) 表示每行代码执行次数之和，而 O 表示正比例关系，这个公式的全称是：算法的渐进时间复杂度。 常见的时间复杂度量级从上至下依次的时间复杂度越来越大，执行的效率越来越低。 常数阶O(1) 对数阶O(logN) 线性阶O(n) 线性对数阶O(nlogN) 平方阶O(n^2) 立方阶O(n^3) K次方阶O(n^k) 指数阶(2^n) 常数阶O(1)无论代码执行了多少行，只要是没有循环等复杂结构，那这个代码的时间复杂度就都是O(1)，如： 12345int i = 1;int j = 2;++i;j++;int m = i + j; 上述代码在执行的时候，它消耗的时候并不随着某个变量的增长而增长，那么无论这类代码有多长，即使有几万几十万行，都可以用O(1)来表示它的时间复杂度。 对数阶O(logN)12345int i = 1;while(i &lt; n)&#123; i = i * 2;&#125; 从上面代码可以看到，在while循环里面，每次都将 i 乘以 2，乘完之后，i 距离 n 就越来越近了。我们试着求解一下，假设循环x次之后，i 就大于 n 了，此时这个循环就退出了，也就是说 2 的 x 次方等于 n，那么 x = log2n。 也就是说当循环log2n次以后，这个代码就结束了。因此这个代码的时间复杂度为：O(logn)。 线性阶O(n)12345for(i=1; i&lt;=n; ++i)&#123; j = i; j++;&#125; 这段代码，for循环里面的代码会执行n遍，因此它消耗的时间是随着n的变化而变化的，因此这类代码都可以用O(n)来表示它的时间复杂度。 线性对数阶O(nlogN)线性对数阶O(nlogN) 其实非常容易理解，将时间复杂度为O(logn)的代码循环N遍的话，那么它的时间复杂度就是 n * O(logN)，也就是了O(nlogN)。 12345678for(m=1; m&lt;n; m++)&#123; i = 1; while(i &lt; n) &#123; i = i * 2; &#125;&#125; 平方阶O(n^2)如果把 O(n) 的代码再嵌套循环一遍，它的时间复杂度就是 O(n²) 了。 12345678for(x=1; i&lt;=n; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 这段代码其实就是嵌套了2层n循环，它的时间复杂度就是 O(n*n)，即 O(n²)如果将其中一层循环的n改成m，即： 12345678for(x=1; i&lt;=m; x++)&#123; for(i=1; i&lt;=n; i++) &#123; j = i; j++; &#125;&#125; 那它的时间复杂度就变成了 O(m*n) 立方阶O(n^3)、K次方阶O(n^k)参考上面的O(n^2) 去理解就好了，O(n^3)相当于三层n循环，其它的类似。 Referencehttps://blog.csdn.net/jsjwk/article/details/84315770]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -156,6 +161,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Ubuntu中sublime text安装]]></title>
+    <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADsublime-text%E5%AE%89%E8%A3%85%2F</url>
+    <content type="text"><![CDATA[用于日常代码编写，以及文本查看。 安装（Stable）12345wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -sudo apt-get install apt-transport-httpsecho "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.listsudo apt-get updatesudo apt-get install sublime-text 显示编辑器中空格显示空格在于方便检查python等语法的严格缩进。同样适用于Windows下。 菜单中选择Preferences，Settings。在settings-User中添加 1"draw_white_space": "all"]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu中typora安装]]></title>
     <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADtypora%E5%AE%89%E8%A3%85%2F</url>
     <content type="text"><![CDATA[Markdown编辑器与阅读器。 安装1234wget -qO - https://typora.io/linux/public-key.asc | sudo apt-key add -sudo add-apt-repository 'deb https://typora.io/linux ./'sudo apt-get updatesudo apt-get install typora MarkdownMarkdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。 当前许多网站都广泛使用 Markdown 来撰写帮助文档或是用于论坛上发表消息。例如：GitHub、简书、reddit、Diaspora、Stack Exchange、OpenStreetMap 、SourceForge等。 菜鸟教程 https://www.runoob.com/markdown/md-tutorial.html]]></content>
@@ -165,17 +181,6 @@
       <tags>
         <tag>Linux</tag>
         <tag>Markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Ubuntu中sublime text安装]]></title>
-    <url>%2F2019%2F10%2F07%2FUbuntu%E4%B8%ADsublime-text%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[用于日常代码编写，以及文本查看。 安装（Stable）12345wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -sudo apt-get install apt-transport-httpsecho "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.listsudo apt-get updatesudo apt-get install sublime-text 显示编辑器中空格显示空格在于方便检查python等语法的严格缩进。同样适用于Windows下。 菜单中选择Preferences，Settings。在settings-User中添加 1"draw_white_space": "all"]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
