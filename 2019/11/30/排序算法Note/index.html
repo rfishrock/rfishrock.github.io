@@ -66,7 +66,9 @@
 <meta property="og:image" content="http://yoursite.com/2019/11/30/排序算法Note/InsertionSort.gif">
 <meta property="og:image" content="http://yoursite.com/2019/11/30/排序算法Note/Shell%27sSort.gif">
 <meta property="og:image" content="http://yoursite.com/2019/11/30/排序算法Note/SelectionSort.gif">
-<meta property="og:updated_time" content="2020-01-13T08:05:40.215Z">
+<meta property="og:image" content="http://yoursite.com/2019/11/30/排序算法Note/HeapSort.gif">
+<meta property="og:image" content="http://yoursite.com/2019/11/30/排序算法Note/BubbleSort.gif">
+<meta property="og:updated_time" content="2020-01-13T08:39:50.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序算法Note">
 <meta name="twitter:description" content="类别 排序方法 时间复杂度（平均） 时间复杂度（最好） 时间复杂度（最坏） 空间复杂度 稳定度    插入排序 直接插入 O(n2) O(n) O(n2) O(1) √    希尔排序 O(n1.3) O(n) O(n2) O(1) ×   选择排序 直接排序 O(n2) O(n2) O(n2) O(1) ×    堆排序 O(nlog2n) O(nlog2n) O(nlog2n) O(1)">
@@ -310,7 +312,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-13 16:05:40" itemprop="dateModified" datetime="2020-01-13T16:05:40+08:00">2020-01-13</time>
+                <time title="修改时间：2020-01-13 16:39:50" itemprop="dateModified" datetime="2020-01-13T16:39:50+08:00">2020-01-13</time>
               </span>
             
           
@@ -456,8 +458,31 @@
 <li>第1趟排序<br>在无序区R[1..n]中选出关键字最小的记录R[k]，将它与无序区的第1个记录R[1]交换，使R[1..1]和R[2..n]分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区。</li>
 <li>第i趟排序<br>第i趟排序开始时，当前有序区和无序区分别为R[1..i-1]和R(i..n）。该趟排序从当前无序区中选出关键字最小的记录 R[k]，将它与无序区的第1个记录R交换，使R[1..i]和R分别变为记录个数增加1个的新有序区和记录个数减少1个的新无序区。</li>
 </ol>
+<h2 id="堆排序（Heap-Sort）"><a href="#堆排序（Heap-Sort）" class="headerlink" title="堆排序（Heap Sort）"></a>堆排序（Heap Sort）</h2><p>堆排序是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。堆排序可以说是一种利用堆的概念来排序的选择排序。分为两种方法：</p>
+<ol>
+<li>大顶堆：每个节点的值都大于或等于其子节点的值，在堆排序算法中用于升序排列；</li>
+<li>小顶堆：每个节点的值都小于或等于其子节点的值，在堆排序算法中用于降序排列；</li>
+</ol>
+<img src="/2019/11/30/排序算法Note/HeapSort.gif" title="HeapSort">
+
+<h3 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>将待排序序列构建成一个堆 H[0……n-1]，根据（升序降序需求）选择大顶堆或小顶堆；</li>
+<li>把堆首（最大值）和堆尾互换；</li>
+<li>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</li>
+<li>重复步骤 2，直到堆的尺寸为 1。</li>
+</ol>
+<h2 id="冒泡排序（Bubble-Sort）"><a href="#冒泡排序（Bubble-Sort）" class="headerlink" title="冒泡排序（Bubble Sort）"></a>冒泡排序（Bubble Sort）</h2><p>冒泡排序是一种简单直观的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。</p>
+<img src="/2019/11/30/排序算法Note/BubbleSort.gif" title="BubbleSort">
+
+<h3 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.cnblogs.com/onepixel/articles/7674659.html" target="_blank" rel="noopener">https://www.cnblogs.com/onepixel/articles/7674659.html</a></p>
 <p><a href="https://www.jianshu.com/p/40dcc3b83ddc" target="_blank" rel="noopener">https://www.jianshu.com/p/40dcc3b83ddc</a></p>
+<p><a href="https://sort.hust.cc/" target="_blank" rel="noopener">https://sort.hust.cc/</a></p>
 
     </div>
 
@@ -544,7 +569,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-number">1.</span> <span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序（Shell’s-Sort）"><span class="nav-number">2.</span> <span class="nav-text">希尔排序（Shell’s Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-number">3.</span> <span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">3.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序（Insertion-Sort）"><span class="nav-number">1.</span> <span class="nav-text">插入排序（Insertion Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">1.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序（Shell’s-Sort）"><span class="nav-number">2.</span> <span class="nav-text">希尔排序（Shell’s Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-1"><span class="nav-number">2.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序（Selection-Sort）"><span class="nav-number">3.</span> <span class="nav-text">选择排序（Selection Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-2"><span class="nav-number">3.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序（Heap-Sort）"><span class="nav-number">4.</span> <span class="nav-text">堆排序（Heap Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-3"><span class="nav-number">4.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序（Bubble-Sort）"><span class="nav-number">5.</span> <span class="nav-text">冒泡排序（Bubble Sort）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤-4"><span class="nav-number">5.1.</span> <span class="nav-text">步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">6.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
