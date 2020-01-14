@@ -309,8 +309,8 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/10/30/TensorFlow各版本对应/" itemprop="url">
-            <span itemprop="name">TensorFlow各版本对应</span>
+          <a class="post-title-link" href="/2019/10/30/算法复杂度/" itemprop="url">
+            <span itemprop="name">算法复杂度Note</span>
           </a>
         
       </h2>
@@ -338,8 +338,8 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/10/30/算法复杂度/" itemprop="url">
-            <span itemprop="name">算法复杂度Note</span>
+          <a class="post-title-link" href="/2019/10/30/TensorFlow各版本对应/" itemprop="url">
+            <span itemprop="name">TensorFlow各版本对应</span>
           </a>
         
       </h2>
@@ -860,6 +860,31 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'lbIncvBC0L2XeK1wPIL0Ubxe-MdYXbMMI',
+    appKey: 'Pe4I8IsVjhxTfrvupTAh08B1',
+    placeholder: 'Say something.',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

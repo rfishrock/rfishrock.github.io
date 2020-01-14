@@ -325,6 +325,20 @@
               <span class="leancloud-visitors-count"></span>
             </span>
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/10/30/算法复杂度/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/10/30/算法复杂度/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -405,8 +419,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/10/11/Python在字符串前补零/" rel="next" title="Python在字符串前补零">
-                  <i class="fa fa-chevron-left"></i> Python在字符串前补零
+                <a href="/2019/10/30/TensorFlow各版本对应/" rel="next" title="TensorFlow各版本对应">
+                  <i class="fa fa-chevron-left"></i> TensorFlow各版本对应
                 </a>
               
             </div>
@@ -415,8 +429,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/10/30/TensorFlow各版本对应/" rel="prev" title="TensorFlow各版本对应">
-                  TensorFlow各版本对应 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/11/05/开源许可证Note/" rel="prev" title="开源许可证Note">
+                  开源许可证Note <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -435,6 +449,9 @@
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           
@@ -692,6 +709,31 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: true,
+    appId: 'lbIncvBC0L2XeK1wPIL0Ubxe-MdYXbMMI',
+    appKey: 'Pe4I8IsVjhxTfrvupTAh08B1',
+    placeholder: 'Say something.',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>
