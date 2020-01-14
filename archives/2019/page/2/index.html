@@ -309,8 +309,8 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/10/30/算法复杂度/" itemprop="url">
-            <span itemprop="name">算法复杂度Note</span>
+          <a class="post-title-link" href="/2019/10/30/TensorFlow各版本对应/" itemprop="url">
+            <span itemprop="name">TensorFlow各版本对应</span>
           </a>
         
       </h2>
@@ -396,8 +396,8 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/10/07/Ubuntu中sublime-text安装/" itemprop="url">
-            <span itemprop="name">Ubuntu中sublime text安装</span>
+          <a class="post-title-link" href="/2019/10/07/Ubuntu中typora安装/" itemprop="url">
+            <span itemprop="name">Ubuntu中typora安装</span>
           </a>
         
       </h2>
@@ -425,8 +425,8 @@
 
       <h2 class="post-title">
         
-          <a class="post-title-link" href="/2019/10/07/Ubuntu中typora安装/" itemprop="url">
-            <span itemprop="name">Ubuntu中typora安装</span>
+          <a class="post-title-link" href="/2019/10/07/Ubuntu中sublime-text安装/" itemprop="url">
+            <span itemprop="name">Ubuntu中sublime text安装</span>
           </a>
         
       </h2>
@@ -669,24 +669,16 @@
         .then(({ results }) => {
           if (results.length > 0) {
             var counter = results[0];
+              leancloudSelector(url).innerText = counter.time + 1;
+            
             Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
               .then(response => response.json())
-              .then(() => {
-                leancloudSelector(url).innerText = counter.time + 1;
-              })
-            
               .catch(error => {
                 console.log('Failed to save visitor count', error);
               })
           } else {
-              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
-                .then(response => response.json())
-                .then(() => {
-                  leancloudSelector(url).innerText = 1;
-                })
-                .catch(error => {
-                  console.log('Failed to create', error);
-                });
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
             
           }
         })
