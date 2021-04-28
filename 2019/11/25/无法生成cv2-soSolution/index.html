@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="RFiSH">
 <meta property="og:description" content="OpenCV编译完成后无法生成cv2.so原因分析。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-25T13:38:22.206Z">
+<meta property="og:updated_time" content="2021-04-28T07:09:30.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无法生成cv2.soSolution">
 <meta name="twitter:description" content="OpenCV编译完成后无法生成cv2.so原因分析。">
@@ -295,11 +295,19 @@
                 
               
 
-              <time title="创建时间：2019-11-25 00:00:00 / 修改时间：21:38:22" itemprop="dateCreated datePublished" datetime="2019-11-25T00:00:00+08:00">2019-11-25</time>
+              <time title="创建时间：2019-11-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-25T00:00:00+08:00">2019-11-25</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-28 15:09:30" itemprop="dateModified" datetime="2021-04-28T15:09:30+08:00">2021-04-28</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -352,11 +360,11 @@
         <p>OpenCV编译完成后无法生成cv2.so原因分析。</p>
 <a id="more"></a>
 
-<h2 id="Bug背景"><a href="#Bug背景" class="headerlink" title="Bug背景"></a>Bug背景</h2><h3 id="OpenCV编译"><a href="#OpenCV编译" class="headerlink" title="OpenCV编译"></a>OpenCV编译</h3><p>​    OpenCV是一个基于BSD许可（开源）发行的跨平台计算机视觉库，轻量级而且高效实现了图像处理和计算机视觉方面的很多通用算法。在当前的版本中，OpenCV将函数模块分为主库与contrib库管理。因此，虽然python语言的opencv接口可以通过pip实现简易版安装，但是如果需要使用到完整OpenCV库的功能（包括Caffe深度学习框架编译的应用等），则需要采用传统的源码编译的方式。</p>
-<p>​    OpenCV本身因版本交替，就较为容易出现与安装说明不相符，参数调整，模块数据调整，与操作系统不兼容等各种问题，而这些问题都有可能引发最后编译bug的生成。</p>
-<h3 id="场景背景"><a href="#场景背景" class="headerlink" title="场景背景"></a>场景背景</h3><p>​    此次bug场景出现在了最近一次对另一个bug场景复现过程当中。原先需复现的场景（也就是一开始想要用来做软件测试课程报告的场景）主要是在Caffe深度学习框架的编译过程中对matlab接口，即matcaffe的编译报错。而在Caffe框架编译中，则首先需要完成OpenCV的编译。然而，在OpenCV编译完成后，则出现了编译无法生成cv2.so的bug。</p>
-<p>​    该bug在之前的项目经历当中都从未出现且在网上没有一个明确的对该bug的解释以及解决方案，最终花费了较长的时间才得到解决，因此特做此记录。</p>
-<p>​    该bug场景可在相同环境中复现。</p>
+<h2 id="Bug背景"><a href="#Bug背景" class="headerlink" title="Bug背景"></a>Bug背景</h2><h3 id="OpenCV编译"><a href="#OpenCV编译" class="headerlink" title="OpenCV编译"></a>OpenCV编译</h3><p>OpenCV是一个基于BSD许可（开源）发行的跨平台计算机视觉库，轻量级而且高效实现了图像处理和计算机视觉方面的很多通用算法。在当前的版本中，OpenCV将函数模块分为主库与contrib库管理。因此，虽然python语言的opencv接口可以通过pip实现简易版安装，但是如果需要使用到完整OpenCV库的功能（包括Caffe深度学习框架编译的应用等），则需要采用传统的源码编译的方式。</p>
+<p>OpenCV本身因版本交替，就较为容易出现与安装说明不相符，参数调整，模块数据调整，与操作系统不兼容等各种问题，而这些问题都有可能引发最后编译bug的生成。</p>
+<h3 id="场景背景"><a href="#场景背景" class="headerlink" title="场景背景"></a>场景背景</h3><p>此次bug场景出现在了最近一次对另一个bug场景复现过程当中。原先需复现的场景（也就是一开始想要用来做软件测试课程报告的场景）主要是在Caffe深度学习框架的编译过程中对matlab接口，即matcaffe的编译报错。而在Caffe框架编译中，则首先需要完成OpenCV的编译。然而，在OpenCV编译完成后，则出现了编译无法生成cv2.so的bug。</p>
+<p>该bug在之前的项目经历当中都从未出现且在网上没有一个明确的对该bug的解释以及解决方案，最终花费了较长的时间才得到解决，因此特做此记录。</p>
+<p>该bug场景可在相同环境中复现。</p>
 <h2 id="实际bug场景"><a href="#实际bug场景" class="headerlink" title="实际bug场景"></a>实际bug场景</h2><h3 id="实际环境"><a href="#实际环境" class="headerlink" title="实际环境"></a>实际环境</h3><ol>
 <li><p>本次bug场景的相关实际系统环境如下：</p>
 <p>操作系统：Ubuntu16.04 LTS</p>
@@ -385,7 +393,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mkdir build &amp;&amp; cd build</span><br><span class="line">cmake -D CMAKE_BUILD_TYPE=RELEASE \</span><br><span class="line">​    -D CMAKE_INSTALL_PREFIX=/usr/local \</span><br><span class="line">​    -D INSTALL_C_EXAMPLES=OFF \</span><br><span class="line">​    -D INSTALL_PYTHON_EXAMPLES=ON \</span><br><span class="line">​    -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \</span><br><span class="line">​    -D BUILD_EXAMPLES=ON ..</span><br><span class="line">sudo make -j8</span><br><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
 
 <p>上述流程都能够顺利完成。</p>
-<h3 id="实际bug描述"><a href="#实际bug描述" class="headerlink" title="实际bug描述"></a>实际bug描述</h3><p>​    当在Anacond虚拟环境下使用python需要调用Opencv接口时，需要将在安装路径下的cv2.so链接到虚拟环境下的python路径当中：</p>
+<h3 id="实际bug描述"><a href="#实际bug描述" class="headerlink" title="实际bug描述"></a>实际bug描述</h3><p>当在Anacond虚拟环境下使用python需要调用Opencv接口时，需要将在安装路径下的cv2.so链接到虚拟环境下的python路径当中：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/anaconda2/envs/caffe/lib/python2.7/site-pakages/</span><br><span class="line">ln -s /usr/local/lib/python2.7/site-pakages/cv2.so cv2.so</span><br></pre></td></tr></table></figure>
 
 <p>通过如下语句进行OpenCV编译是否成功进行测试：</p>
@@ -395,37 +403,54 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ImportError: No module named cv2</span><br></pre></td></tr></table></figure>
 
 <p>报错显示，在python当中并不能正确的引入OpenCV库。</p>
-<p>​    第一时间考虑链接的问题，通过ls -l命令后可以发现当前链接是个坏链，因此查看安装路径发现编译过程并没有生成cv2.so。</p>
-<p>​    该bug定位以及修复的难点在于：</p>
-<p>​    1. 整个编译过程（见2.2）没有出现interrupt，没有报error，无法通过error对bug进行定位。</p>
-<p>​    2. OpenCV本身编译中的许多not found warning最终只是对个别模块的支持受限，对OpenCV正常使用不造成影响，因此对通过log排查bug造成难度。</p>
-<p>​    3. 此次bug在网上并没有一致的案例，属于较为特殊的情况。</p>
-<h2 id="Bug成因"><a href="#Bug成因" class="headerlink" title="Bug成因"></a>Bug成因</h2><h3 id="成因分析"><a href="#成因分析" class="headerlink" title="成因分析"></a>成因分析</h3><p>​    要清楚bug的成因，首先要知道cv2.so是什么。</p>
-<p>​    cv2.so是支持python调用OpenCV的动态链接库，即在python程序运行时能够被动态的申请并调用，因此cv2.so的缺失，与OpenCV源码在对支持python的接口部分编译出现了问题，或者是OpenCV编译时并没有编译python接口模块。</p>
-<p>​    前面在2.2与2.3中提到，在该bug场景当中，整个编译流程并没有interrupt，因此编译报错的情况首先应可以排除，那么cv2.so无法生成的原因就可以限定于是OpenCV没有编译python接口模块。</p>
-<p>​    那么，为什么OpenCV没有编译python接口呢？</p>
-<p>​    2.3中提到，OpenCV在一些not found warning中，会对模块的编译产生受限，那么python接口的未编译就极有可能是因为OpenCV在cmake阶段查询python环境时，未查询到python的某部分环境，在编译阶段无法链接所需python库，最终导致了python接口的未编译。</p>
-<p>​    最终在cmake的log文件当中：</p>
+<p>第一时间考虑链接的问题，通过ls -l命令后可以发现当前链接是个坏链，因此查看安装路径发现编译过程并没有生成cv2.so。</p>
+<p>该bug定位以及修复的难点在于：</p>
+<ol>
+<li>整个编译过程（见2.2）没有出现interrupt，没有报error，无法通过error对bug进行定位。</li>
+<li>OpenCV本身编译中的许多not found warning最终只是对个别模块的支持受限，对OpenCV正常使用不造成影响，因此对通过log排查bug造成难度。</li>
+<li>此次bug在网上并没有一致的案例，属于较为特殊的情况。</li>
+</ol>
+<h2 id="Bug成因"><a href="#Bug成因" class="headerlink" title="Bug成因"></a>Bug成因</h2><h3 id="成因分析"><a href="#成因分析" class="headerlink" title="成因分析"></a>成因分析</h3><p>要清楚bug的成因，首先要知道cv2.so是什么。</p>
+<p>cv2.so是支持python调用OpenCV的动态链接库，即在python程序运行时能够被动态的申请并调用，因此cv2.so的缺失，与OpenCV源码在对支持python的接口部分编译出现了问题，或者是OpenCV编译时并没有编译python接口模块。</p>
+<p>前面在2.2与2.3中提到，在该bug场景当中，整个编译流程并没有interrupt，因此编译报错的情况首先应可以排除，那么cv2.so无法生成的原因就可以限定于是OpenCV没有编译python接口模块。</p>
+<p>那么，为什么OpenCV没有编译python接口呢？</p>
+<p>2.3中提到，OpenCV在一些not found warning中，会对模块的编译产生受限，那么python接口的未编译就极有可能是因为OpenCV在cmake阶段查询python环境时，未查询到python的某部分环境，在编译阶段无法链接所需python库，最终导致了python接口的未编译。</p>
+<p>最终在cmake的log文件当中：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-- Could NOT find PythonLibs (missing: PYTHON_INCLUDE_DIRS)</span><br></pre></td></tr></table></figure>
 
 <p>验证了当前猜想。</p>
-<p>​    因此，我们可以归结出OpenCV编译无法生成cv2.so在该场景下的成因，即是当前环境下python库的缺失。</p>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>​    3.1中已对bug成因进行了分析，在这里补充一下为什么在已有python环境的情况下，依然会有类库依赖缺失问题。</p>
-<p>​    Linux发行版通常会把类库的头文件和相关的pkg-config分拆成一个单独的xxx-dev(el)包。针对python环境下，该类库即python-dev。</p>
-<p>​    那么什么情况需要安装python-dev？</p>
-<p>​    1. 需要自己安装一个源外的python类库, 而这个类库内含需要编译的调用python API的c/c++文件（如：安装使用WiringpisPi库需要python-dev）。</p>
-<p>​    2. 你自己写的一个程序编译需要链接libpythonXX.(a/so)(注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用libpython.so)</p>
-<p>​    其他正常使用python或者通过安装源内的python类库的不需要python-dev.</p>
-<h2 id="发现并修复bug过程"><a href="#发现并修复bug过程" class="headerlink" title="发现并修复bug过程"></a>发现并修复bug过程</h2><p>​    4中归纳1-3中发现并修复bug的过程：</p>
-<p>​    1. 查看cv2.so链接状态，并发现cv2.so缺失。</p>
-<p>​    2. 进行重编译，确认流程步骤完整，并尝试bug复现。</p>
-<p>​    3. 查看cmake过程的log文件，未发现实际相关error。查看lib文件夹下libopencv类库链接正常。</p>
-<p>​    4. 确认是否为cmake参数问题，核对参数，并对相关参数条件覆盖测试(各取OFF/ON)。依然无法修复bug，排除cmake参数问题。</p>
-<p>​    5. 尝试使用OpenCV3.4.6（原3.4.0）进行编译，仍然无法修复bug，排除版本更替丢失或兼容性问题。</p>
-<p>​    6. 查询到一个案例（见参考资料），该案例因在python中没有安装numpy库依赖，导致最终cv2.so无法生成。该案例提供了本bug场景的一个解决思路，即cv2.so的生成失败可能与python环境缺失相关。</p>
-<p>​    7. 查看log文件，发现python类库在编译过程中并未找到，支持了步骤6中的猜想。</p>
-<p>​    8. “sudo apt-get install python2.7-dev”安装python类依赖。</p>
-<p>​    9. 重新编译，成功生成cv2.so，并可通过“import”测试。</p>
+<p>因此，我们可以归结出OpenCV编译无法生成cv2.so在该场景下的成因，即是当前环境下python库的缺失。</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>3.1中已对bug成因进行了分析，在这里补充一下为什么在已有python环境的情况下，依然会有类库依赖缺失问题。</p>
+<p>Linux发行版通常会把类库的头文件和相关的pkg-config分拆成一个单独的xxx-dev(el)包。针对python环境下，该类库即python-dev。</p>
+<p>那么什么情况需要安装python-dev？</p>
+<ol>
+<li><p>需要自己安装一个源外的python类库, 而这个类库内含需要编译的调用python API的c/c++文件（如：安装使用WiringpisPi库需要python-dev）。</p>
+</li>
+<li><p>你自己写的一个程序编译需要链接libpythonXX.(a/so)(注:以上不含使用ctypes/ffi或者裸dlsym方式直接调用libpython.so)</p>
+</li>
+</ol>
+<p>其他正常使用python或者通过安装源内的python类库的不需要python-dev.</p>
+<h2 id="发现并修复bug过程"><a href="#发现并修复bug过程" class="headerlink" title="发现并修复bug过程"></a>发现并修复bug过程</h2><p>4中归纳1-3中发现并修复bug的过程：</p>
+<ol>
+<li><p>查看cv2.so链接状态，并发现cv2.so缺失。</p>
+</li>
+<li><p>进行重编译，确认流程步骤完整，并尝试bug复现。</p>
+</li>
+<li><p>查看cmake过程的log文件，未发现实际相关error。查看lib文件夹下libopencv类库链接正常。</p>
+</li>
+<li><p>确认是否为cmake参数问题，核对参数，并对相关参数条件覆盖测试(各取OFF/ON)。依然无法修复bug，排除cmake参数问题。</p>
+</li>
+<li><p>尝试使用OpenCV3.4.6（原3.4.0）进行编译，仍然无法修复bug，排除版本更替丢失或兼容性问题。</p>
+</li>
+<li><p>查询到一个案例（见参考资料），该案例因在python中没有安装numpy库依赖，导致最终cv2.so无法生成。该案例提供了本bug场景的一个解决思路，即cv2.so的生成失败可能与python环境缺失相关。</p>
+</li>
+<li><p>查看log文件，发现python类库在编译过程中并未找到，支持了步骤6中的猜想。</p>
+</li>
+<li><p>“sudo apt-get install python2.7-dev”安装python类依赖。</p>
+</li>
+<li><p>重新编译，成功生成cv2.so，并可通过“import”测试。</p>
+</li>
+</ol>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>百度百科(opencv):</p>
 <p><a href="https://baike.baidu.com/item/opencv/10320623?fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/opencv/10320623?fr=aladdin</a></p>
 <p>pyimagesearch(Install OpenCV 3.0 and Python 2.7+ on Ubuntu):</p>
@@ -475,8 +500,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/11/30/排序算法Note/" rel="prev" title="排序算法Note">
-                  排序算法Note <i class="fa fa-chevron-right"></i>
+                <a href="/2019/11/30/MarkdownNote/" rel="prev" title="MarkdownNote">
+                  MarkdownNote <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -594,7 +619,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

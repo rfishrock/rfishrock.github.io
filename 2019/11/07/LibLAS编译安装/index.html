@@ -63,7 +63,7 @@
 <meta property="og:site_name" content="RFiSH">
 <meta property="og:description" content="libLAS是一个C/C++库，用于读取和写入常见的LAS LIDAR格式。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-07T02:52:06.247Z">
+<meta property="og:updated_time" content="2020-01-22T09:07:30.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="libLAS编译安装">
 <meta name="twitter:description" content="libLAS是一个C/C++库，用于读取和写入常见的LAS LIDAR格式。">
@@ -295,11 +295,19 @@
                 
               
 
-              <time title="创建时间：2019-11-07 00:00:00 / 修改时间：10:52:06" itemprop="dateCreated datePublished" datetime="2019-11-07T00:00:00+08:00">2019-11-07</time>
+              <time title="创建时间：2019-11-07 00:00:00" itemprop="dateCreated datePublished" datetime="2019-11-07T00:00:00+08:00">2019-11-07</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-22 17:07:30" itemprop="dateModified" datetime="2020-01-22T17:07:30+08:00">2020-01-22</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -354,12 +362,16 @@
 
 <h2 id="编译GeoTIFF"><a href="#编译GeoTIFF" class="headerlink" title="编译GeoTIFF"></a>编译GeoTIFF</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.osgeo.org/geotiff/libgeotiff/libgeotiff-1.3.0.tar.gz</span><br><span class="line">tar -xvf libgeotiff-1.3.0.tar.gz &amp;&amp; <span class="built_in">cd</span> libgeotiff-1.3.0</span><br><span class="line">./configure</span><br><span class="line">make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 
-<h2 id="编译libLAS"><a href="#编译libLAS" class="headerlink" title="编译libLAS"></a>编译libLAS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir makefiles &amp;&amp; <span class="built_in">cd</span> makefiles</span><br><span class="line">cmake -G <span class="string">"Unix Makefiles"</span> ..</span><br><span class="line">make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h2 id="编译libLAS"><a href="#编译libLAS" class="headerlink" title="编译libLAS"></a>编译libLAS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir makefiles &amp;&amp; <span class="built_in">cd</span> makefiles</span><br><span class="line">sudo cmake -G <span class="string">"Unix Makefiles"</span> ..</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
 
 <h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lasinfo &lt;file_path&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="PDAL"><a href="#PDAL" class="headerlink" title="PDAL"></a>PDAL</h2><p>截至2018年，libLAS已经被PDAL项目取代，进入休眠和维护状态。libLAS不提供PDAL提供的对LAS或LAZ 1.4的支持。</p>
 <p>并且PDAL提供Python的支持。</p>
+<h2 id="lasinfo-error-while-loading-shared-libraries-liblas-so-3-cannot-open-shared-object-file-No-such-file-or-directory"><a href="#lasinfo-error-while-loading-shared-libraries-liblas-so-3-cannot-open-shared-object-file-No-such-file-or-directory" class="headerlink" title="lasinfo: error while loading shared libraries: liblas.so.3: cannot open shared object file: No such file or directory"></a>lasinfo: error while loading shared libraries: liblas.so.3: cannot open shared object file: No such file or directory</h2><p>lasinfo: error while loading shared libraries: liblas.so.3: cannot open shared object file: No such file or directory</p>
+<p>解决方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LD_LIBRARY_PATH=<span class="string">"/usr/local/lib"</span> lasinfo</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -451,7 +463,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译GeoTIFF"><span class="nav-number">1.</span> <span class="nav-text">编译GeoTIFF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译libLAS"><span class="nav-number">2.</span> <span class="nav-text">编译libLAS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDAL"><span class="nav-number">4.</span> <span class="nav-text">PDAL</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译GeoTIFF"><span class="nav-number">1.</span> <span class="nav-text">编译GeoTIFF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译libLAS"><span class="nav-number">2.</span> <span class="nav-text">编译libLAS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDAL"><span class="nav-number">4.</span> <span class="nav-text">PDAL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lasinfo-error-while-loading-shared-libraries-liblas-so-3-cannot-open-shared-object-file-No-such-file-or-directory"><span class="nav-number">5.</span> <span class="nav-text">lasinfo: error while loading shared libraries: liblas.so.3: cannot open shared object file: No such file or directory</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
@@ -516,7 +528,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2016 – <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
