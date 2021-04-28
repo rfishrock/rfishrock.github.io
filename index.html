@@ -533,7 +533,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-13 10:14:44" itemprop="dateModified" datetime="2019-12-13T10:14:44+08:00">2019-12-13</time>
+                <time title="修改时间：2021-04-28 15:53:32" itemprop="dateModified" datetime="2021-04-28T15:53:32+08:00">2021-04-28</time>
               </span>
             
           
@@ -584,9 +584,141 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.15</span>)</span><br><span class="line"><span class="keyword">project</span>(PCL_DETECT)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">add_executable</span>(PCL_Detect main.cpp)</span><br><span class="line"></span><br><span class="line"><span class="keyword">find_package</span>(libLAS REQUIRED)</span><br><span class="line"><span class="keyword">find_package</span>(VTK REQUIRED)</span><br><span class="line"></span><br><span class="line"><span class="keyword">include_directories</span>(/usr/local/<span class="keyword">include</span>/liblas)</span><br><span class="line"><span class="keyword">include_directories</span>(/usr/local/<span class="keyword">include</span>/pcl-<span class="number">1.8</span>)</span><br><span class="line"><span class="keyword">include_directories</span>(/usr/local/<span class="keyword">include</span>/eigen3)</span><br><span class="line"><span class="keyword">include_directories</span>(/usr/local/<span class="keyword">include</span>/vtk-<span class="number">5.10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">target_link_libraries</span>(PCL_Detect /usr/local/lib/liblas.so)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(PCL_Detect /usr/lib/x86_64-linux-gnu/libboost_thread.so.<span class="number">1.58</span>.<span class="number">0</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(PCL_Detect /usr/lib/x86_64-linux-gnu/libboost_system.so.<span class="number">1.58</span>.<span class="number">0</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(PCL_Detect /usr/lib/libpcl_visualization.so)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(PCL_Detect /usr/lib/libpcl_io.so.<span class="number">1.8</span>)</span><br></pre></td></tr></table></figure>
+          <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CMAKE_MINIMUM_REQUIRED</span>(VERSION <span class="number">3.15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Enable O2 Optimization.</span></span><br><span class="line"><span class="keyword">SET</span>(CMAKE_CXX_FLAGS <span class="string">"-std=c++14 -O2"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Announce the project name.</span></span><br><span class="line"><span class="keyword">PROJECT</span>(<span class="string">"MMP"</span>) <span class="comment">## Multi-Model Processing</span></span><br><span class="line"><span class="keyword">SET</span>(PROJECT_NAME MMP)</span><br><span class="line"><span class="keyword">SET</span>(LIBRARY_NAME MmpShared)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Specify work dirs.</span></span><br><span class="line"><span class="keyword">SET</span>(PROJECT_BINARY_DIR <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/build)</span><br><span class="line"><span class="keyword">SET</span>(EXECUTABLE_OUTPUT_PATH <span class="variable">$&#123;PROJECT_BINARY_DIR&#125;</span>/bin)</span><br><span class="line"><span class="keyword">SET</span>(LIBRARY_OUTPUT_PATH <span class="variable">$&#123;PROJECT_BINARY_DIR&#125;</span>/lib)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Find third party dependencies.</span></span><br><span class="line"><span class="comment"># PCL</span></span><br><span class="line"><span class="keyword">FIND_PACKAGE</span>(PCL REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;PCL_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="keyword">LIST</span>(REMOVE_ITEM PCL_LIBRARIES <span class="string">"vtkproj4"</span>) <span class="comment">## needed if install pcl from repo (and libproj-dev)</span></span><br><span class="line"><span class="comment"># libLAS</span></span><br><span class="line"><span class="keyword">FIND_PACKAGE</span>(libLAS REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;LIBLAS_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="comment"># VTK</span></span><br><span class="line"><span class="keyword">FIND_PACKAGE</span>(VTK REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;VTK_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="comment"># OpenCV</span></span><br><span class="line"><span class="keyword">FIND_PACKAGE</span>(OpenCV REQUIRED)</span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;OpenCV_INCLUDE_DIRS&#125;</span>)</span><br><span class="line"><span class="comment"># Open3D</span></span><br><span class="line"><span class="comment"># FIND_PACKAGE(Open3D REQUIRED)</span></span><br><span class="line"><span class="comment"># INCLUDE_DIRECTORIES($&#123;Open3D_INCLUDE_DIRS&#125;)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SET</span>(THIRD_PARTY_LIBS <span class="variable">$&#123;PCL_LIBRARIES&#125;</span> <span class="variable">$&#123;libLAS_LIBRARIES&#125;</span> <span class="variable">$&#123;VTK_LIBRARIES&#125;</span> <span class="variable">$&#123;OpenCV_LIBS&#125;</span> <span class="comment">#$&#123;Open3D_LIBRARIES&#125;</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line"><span class="keyword">IF</span>(<span class="keyword">NOT</span> WIN32)</span><br><span class="line">    <span class="keyword">SET</span>(SPECIAL_OS_LIBS <span class="string">"pthread"</span> <span class="string">"X11"</span>)</span><br><span class="line">    <span class="keyword">ADD_DEFINITIONS</span>(-Wno-write-strings -fpermissive)</span><br><span class="line"><span class="keyword">ENDIF</span>()</span><br><span class="line"><span class="keyword">set</span>(CMAKE_EXE_LINKER_FLAGS <span class="string">"-fopenmp $&#123;CMAKE_EXE_LINKER_FLAGS&#125;"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">## Our include directories.</span></span><br><span class="line"><span class="keyword">INCLUDE_DIRECTORIES</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Generate our own shared library.</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE SRC_FILES src/*.cpp)</span><br><span class="line"><span class="keyword">LIST</span>(REMOVE_ITEM SRC_FILES <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src/main.cpp)</span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE HEAD_FILES <span class="keyword">include</span>/*.h)</span><br><span class="line"><span class="keyword">LIST</span>(REMOVE_ITEM HEAD_FILES <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src/main.h)</span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE SAMPLE_FILES sample/*.*)</span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD_LIBRARY</span>(MmpShared SHARED <span class="variable">$&#123;SRC_FILES&#125;</span> <span class="variable">$&#123;SAMPLE_FILES&#125;</span>)</span><br><span class="line"><span class="keyword">TARGET_LINK_LIBRARIES</span>(MmpShared <span class="variable">$&#123;THIRD_PARTY_LIBS&#125;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Specify executable source file.</span></span><br><span class="line"><span class="keyword">ADD_EXECUTABLE</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> src/main.cpp)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## Add all link directories to project.</span></span><br><span class="line"><span class="keyword">TARGET_LINK_LIBRARIES</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> MmpShared)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/12/11/CMakeList-txtNote/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
 
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/11/C++编程规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="RFishRock">
+      <meta itemprop="description" content="信息是消除系统不确定性的唯一方式">
+      <meta itemprop="image" content="/images/myAvatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="RFiSH">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/2019/12/11/C++编程规范/" class="post-title-link" itemprop="url">C++编程规范</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
+              <time title="创建时间：2019-12-11 00:00:00" itemprop="dateCreated datePublished" datetime="2019-12-11T00:00:00+08:00">2019-12-11</time>
+            </span>
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-28 15:53:26" itemprop="dateModified" datetime="2021-04-28T15:53:26+08:00">2021-04-28</time>
+              </span>
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span id="/2019/12/11/C++编程规范/" class="post-meta-item leancloud_visitors" data-flag-title="C++编程规范" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+        
+      
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/11/C++编程规范/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/12/11/C++编程规范/" itemprop="commentCount"></span></a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-命名约定"><a href="#1-命名约定" class="headerlink" title="1. 命名约定"></a>1. 命名约定</h2><p>最重要的一致性规则是命名管理. 命名的风格能让我们在不需要去查找类型声明的条件下快速地了解某个名字代表的含义: 类型, 变量, 函数, 常量, 宏, 等等, 甚至, 我们大脑中的模式匹配引擎非常依赖这些命名规则.</p>
+<p>命名规则具有一定随意性, 但相比按个人喜好命名, 一致性更重要, 所以无论你认为它们是否重要, 规则总归是规则.</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/12/11/C++编程规范/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1425,122 +1557,6 @@
   </article>
 
     
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/05/LivoxNote/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="RFishRock">
-      <meta itemprop="description" content="信息是消除系统不确定性的唯一方式">
-      <meta itemprop="image" content="/images/myAvatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="RFiSH">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/11/05/LivoxNote/" class="post-title-link" itemprop="url">LivoxNote</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-11-05 00:00:00 / 修改时间：16:38:21" itemprop="dateCreated datePublished" datetime="2019-11-05T00:00:00+08:00">2019-11-05</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LIDAR/" itemprop="url" rel="index"><span itemprop="name">LIDAR</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            <span id="/2019/11/05/LivoxNote/" class="post-meta-item leancloud_visitors" data-flag-title="LivoxNote" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-        
-      
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/05/LivoxNote/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019/11/05/LivoxNote/" itemprop="commentCount"></span></a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <img src="/2019/11/05/LivoxNote/Lidar.png" title="lidar">
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/11/05/LivoxNote/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
   </div>
 
   
@@ -1593,7 +1609,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
